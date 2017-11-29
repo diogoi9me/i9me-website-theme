@@ -11485,19 +11485,18 @@ button:hover {
 .header__menu ul li a {
     font: 600 .9375rem Rajdhani, Arial, helvetica, sans-serif;
     color: #fff;
-    text-transform: uppercase
+    text-transform: uppercase;
+    font-weight: bold; 
+    letter-spacing: 1.5px;
+    font-size: 16px;
 }
 
 @media only screen and (min-width:767px) {
-    .header__menu ul li a {
-        font: 700 .9375rem Rajdhani, Arial, helvetica, sans-serif
-    }
+   
 }
 
 @media only screen and (min-width:1023px) {
-    .header__menu ul li a {
-        font: 500 1.125rem Rajdhani, Arial, helvetica, sans-serif
-    }
+    
     .header__menu ul li a:hover {
         color: #00a5dc;
         -webkit-transition: all .4s ease;
