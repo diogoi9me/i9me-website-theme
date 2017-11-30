@@ -44,7 +44,7 @@ if ( has_post_thumbnail() ) {
 			<?php get_template_part('breadcrumb');?>
 		</div>
 	</div>
-<section class="servicos">
+<section class="servicos servicos--design">
 	<?php get_template_part('templates/servico','loop');?>
 </section>
 

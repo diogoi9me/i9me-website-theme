@@ -85,7 +85,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<?php endwhile; ?> 
 						<?php if( is_home() || is_front_page() ): ?>
 						<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="0.25" data-wow-delay="0">
-							<a href="<?php echo home_url(); ?>/servicos/#design" class="btn-plus"></a>
+							<a href="<?php echo home_url(); ?>/servicos/design/" class="btn-plus"></a>
 						</div>
 					<?php endif; ?>
 					</ul>	
@@ -149,7 +149,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 					</ul>
 						<?php if( is_home() || is_front_page() ): ?>
 							<div class="groupboxes__vermais groupboxes__vermais--servicos wow rotateIn" data-wow-duration="0.25" data-wow-delay="0">
-								<a href="<?php echo home_url(); ?>/servicos/#web" class="btn-plus"></a>
+								<a href="<?php echo home_url(); ?>/servicos/web/" class="btn-plus"></a>
 							</div>
 						<?php endif; ?>	
 				</div>

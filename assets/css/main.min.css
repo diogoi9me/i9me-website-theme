@@ -12363,7 +12363,7 @@ button:hover {
     }
 }
 
-.servicos__web:before {
+body:not(.page) .servicos__web:before {
     content: "";
     position: absolute;
     background: url(../images/before-web.png) no-repeat 50%;
@@ -12700,7 +12700,7 @@ button:hover {
 
 .blog {
     position: relative;
-    background: #fff
+    background: #eee;
 }
 
 .blog__conteudo {
@@ -13328,7 +13328,8 @@ button:hover {
 
 .depoimentos {
     position: relative;
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    background: #FFF;
 }
 
 .depoimentos__carousel {
