@@ -11,7 +11,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
  ?>
  	<article class="servicos__design" id="design">
 		<div class="boxes">
-			<div class="container">
+			<div class="container-full">
 
 				<div class="boxes__box-left">
 
@@ -101,7 +101,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 				 ?>
 				</p>
 			</header>
-			<div class="container">
+			<div class="container-full">
 				<div class="boxes__box-right">
 					<ul class="lista lista--web">
 						<?php
