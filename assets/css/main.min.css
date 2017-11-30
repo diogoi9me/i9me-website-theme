@@ -274,6 +274,48 @@ Padrões
     padding-left: 10%;
 }
 
+/*=====
+Espaçamentos
+=====*/
+
+/*Horizontais*/
+.padding-horizontal{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.padding-bottom{
+    padding-bottom: 30px;
+}
+.padding-top{
+    padding-top: 30px;
+}
+
+/*Verticais*/
+.padding-vertical{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.padding-left{
+    padding-left: 5%;
+}
+.padding-right{
+    padding-right: 5%;
+}
+
+
+/*Verticais Internos*/
+.padding-vertical--inter{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.padding-left--inter{
+    padding-left: 15px;
+}
+.padding-right--inter{
+    padding-right: 15px;
+}
+
+
 
 /**
 FIM - Padrões
@@ -9940,7 +9982,70 @@ input:-webkit-autofill:hover {
     position: relative
 }
 
+/*=============================
+Fora @mediaqueries - DIOGO
+===============================*/
+
+/*=============================
+COMEÇANDO O @mediaqueries - DIOGO
+===============================*/
+
+
+
 @media only screen and (min-width:1023px) {
+
+
+/*=====
+Padroes Diogo Responsive - PC
+======*/
+
+/*=====
+Espaçamentos PC
+=====*/
+
+/*Horizontais*/
+.padding-horizontal{
+    padding-top: 90px !important;
+    padding-bottom: 90px !important;
+}
+.padding-bottom{
+    padding-bottom: 90px !important;
+}
+.padding-top{
+    padding-top: 90px !important;
+}
+
+
+/*Verticais*/
+.padding-vertical{
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+.padding-left{
+    padding-left: 5% !important;
+}
+.padding-right{
+    padding-right: 5% !important;
+}
+
+/*Verticais Internos*/
+.padding-vertical--inter{
+    padding-left: 45px !important;
+    padding-right: 45px !important;
+}
+.padding-left--inter{
+    padding-left: 45px !important;
+}
+.padding-right--inter{
+    padding-right: 45px !important;
+}
+
+/*=====
+FIM - Padroes Diogo Responsive - PC
+======*/
+
+
+
     .col-half {
         float: left;
         clear: none;
@@ -10022,6 +10127,58 @@ input:-webkit-autofill:hover {
 }
 
 @media only screen and (min-width:767px) {
+
+    /*=====
+Padroes Diogo Responsive - TABLET
+======*/
+
+/*=====
+Espaçamentos
+=====*/
+
+/*Horizontais*/
+.padding-horizontal{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.padding-bottom{
+    padding-bottom: 60px;
+}
+.padding-top{
+    padding-top: 60px;
+}
+
+
+/*Verticais*/
+.padding-vertical{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.padding-left{
+    padding-left: 5%;
+}
+.padding-right{
+    padding-right: 5%;
+}
+
+/*Verticais Internos*/
+.padding-vertical--inter{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.padding-left--inter{
+    padding-left: 30px;
+}
+.padding-right--inter{
+    padding-right: 30px;
+}
+
+/*=====
+FIM - Padroes Diogo Responsive - TABLET
+======*/
+
+
+
     .grid--col3 .grid__item {
         float: left;
         clear: none;
@@ -12698,7 +12855,7 @@ body:not(.page) .servicos__web:before {
     position: relative
 }
 
-.blog {
+section.blog {
     position: relative;
     background: #eee;
 }
@@ -12853,17 +13010,9 @@ body:not(.page) .servicos__web:before {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    min-height: 865px;
-    margin-top: 30px;
-    padding-bottom: 70px
+    
 }
 
-@media only screen and (min-width:767px) {
-    .atendimento {
-        margin-top: 90px;
-        padding-bottom: 0
-    }
-}
 
 .atendimento__boxform {
     float: left;
@@ -12883,7 +13032,7 @@ body:not(.page) .servicos__web:before {
 
 @media only screen and (min-width:767px) {
     .atendimento__boxform {
-        margin-top: 50px;
+        margin-top: 25px;
         -webkit-box-shadow: 0 0 1px 0 #000;
         box-shadow: 0 0 1px 0 #000
     }
@@ -13356,10 +13505,10 @@ body:not(.page) .servicos__web:before {
 
 @media only screen and (min-width:767px) {
     .depoimentos__carousel {
-        margin-top: 60px
+        margin-top: 30px
     }
     .depoimentos__carousel .owl-controls {
-        margin: 60px 0
+        margin: 30px 0 0 0
     }
 }
 
@@ -14087,6 +14236,12 @@ body:not(.page) .servicos__web:before {
     clear: both
 }
 
+.header-section__title span{
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
 @media only screen and (min-width:767px) {
     .header-section__box--atendimento {
         min-height: 211px;
@@ -14130,6 +14285,10 @@ body:not(.page) .servicos__web:before {
     height: 85px!important;
     top: 0
 }
+
+section.blog .header-section__title:before {
+        border-color: #ddd;
+    }
 
 @media only screen and (min-width:767px) {
     .header-section__title {
@@ -14275,7 +14434,7 @@ body:not(.page) .servicos__web:before {
 
 @media only screen and (min-width:767px) {
     .header-section__title--web:before {
-        border-color: #fff;
+        border-color: #DDD;
         top: -25px;
         height: 25px
     }
@@ -16995,12 +17154,16 @@ body:not(.page) .servicos__web:before {
     }
 }
 
+.clientes__carousel .owl-dots .owl-dot {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 .clientes__carousel .owl-dots .owl-dot.active {
     background: #fff
 }
 
 .clientes__item {
-    min-height: 195px;
+    min-height: 180px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -17018,9 +17181,12 @@ body:not(.page) .servicos__web:before {
     justify-content: center
 }
 
+
+
+
 @media only screen and (min-width:767px) {
     .clientes__item {
-        min-height: 250px
+        min-height: 180px
     }
 }
 

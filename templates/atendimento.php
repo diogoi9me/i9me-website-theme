@@ -1,8 +1,8 @@
-<section class="atendimento" id="atendimentos">
+<section class="atendimento padding-bottom" id="atendimentos">
 	<div class="container">
 		<header class="header-section">
 			<div class="header-section__box header-section__box--before-blue">
-				<h2 class="header-section__title header-section__title--before-blue">Atendimento</h2>
+				<h2 class="header-section__title header-section__title--before-blue wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0s"><span>Atendimento</span></h2>
 			</div>
 			
 			<p class="header-section__subtitle header-section__subtitle--textwhite">
