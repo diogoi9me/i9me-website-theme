@@ -15,7 +15,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 
 				<div class="boxes__box-left">
 
-					<header class="header-section header-section--area-design">
+					<header class="header-section header-section--area-design left-padding--col-inter">
 						<div class="header-section__box header-section__box--design">
 							<span class="header-section__title header-section__title--design">
 								<i class="icon-design"></i>
@@ -42,7 +42,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 
 				<div class="boxes__box-right">
 
-					<ul class="lista lista--design">
+					<ul class="lista lista--design right-padding--col-inter">
 						<?php
 							$tax_slug =  'tipo-de-servico';
 			    			$args = array( 'post_type' => 'servico', 'posts_per_page' => $limit_res, 'order' => 'ASC', 'tax_query' => array(  array( 'taxonomy'  => $tax_slug, 'field' => 'slug','terms' => 'design',),), );
@@ -103,7 +103,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 			</header>
 			<div class="container-full">
 				<div class="boxes__box-right">
-					<ul class="lista lista--web">
+					<ul class="lista lista--web left-padding--col-inter">
 						<?php
 							$tax_slug =  'tipo-de-servico';
 	            			$args = array( 'post_type' => 'servico', 'posts_per_page' => $limit_res, 'order' => 'ASC', 'tax_query' => array(  array( 'taxonomy'  => $tax_slug, 'field' => 'slug','terms' => 'web',),), );
@@ -147,7 +147,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<?php endif; ?>	
 				</div>
 				<div class="boxes__box-left">
-					<header class="header-section header-section--area-design header-section--area-web">
+					<header class="header-section header-section--area-design header-section--area-web right-padding--col-inter">
 						<div class="bloco-title bloco-title--right">
 			        		<h2 class="title-web  ">WEB</h2>
 							<p class="subtitle-web">

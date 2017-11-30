@@ -245,7 +245,7 @@ Padrões
     margin-right: 5%;
 }
 
-.right-margin--interCol {
+.right-margin--col-inter {
     margin-right: 10%;
 }
 
@@ -253,7 +253,7 @@ Padrões
     padding-right: 5%;
 }
 
-.right-padding--interCol {
+.right-padding--col-inter {
     padding-right: 10%;
 }
 
@@ -262,7 +262,7 @@ Padrões
     margin-left: 5%;
 }
 
-.left-margin--interCol {
+.left-margin--col-inter {
     margin-left: 10%;
 }
 
@@ -270,7 +270,7 @@ Padrões
     padding-left: 5%;
 }
 
-.left-padding--interCol {
+.left-padding--col-inter {
     padding-left: 10%;
 }
 
