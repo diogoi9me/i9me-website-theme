@@ -7,8 +7,8 @@
       <div class="container">
         <div class="banner__info">
  
-          <h2 class="banner__title">Entre Criatividade e Resultado, escolha os dois.</h2>
-          <p class="banner__subtitle">PARA RESULTADOS EFICAZES, DESENVOLVEMOS SOLUÇÕES CRIATIVAS..</p>
+          <h2 class="banner__title">Desenvolvimento WEB<br />e DESIGN Criativo</h2>
+          <p class="banner__subtitle">E-COMMERCE, SITES E BLOGS. IDENTIDADE VISUAL, UX/UI DESIGN E ILUSTRAÇÃO.</p>
           <div class="banner__objeto-scroll">
             <a href="#" class="scroll-icon"></a>
           </div>

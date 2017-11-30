@@ -9,6 +9,9 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 		$limit_res = '8';
 	}
  ?>
+ <?php 
+ 		if ( is_page('design') || is_page('servicos') || is_home() || is_front_page() ) {
+ ?>
  	<article class="servicos__design" id="design">
 		<div class="boxes">
 			<div class="container-full">
@@ -90,7 +93,11 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 				</div>
 			</div>	
 		</div>	
-	</article>  
+	</article>
+	<?php } ?>
+	<?php
+ 		if ( is_page('web') || is_page('servicos') || is_home() || is_front_page() ) {
+ 	?>  
 	<article class="servicos__web" id="web">
 		<div class="boxes boxes--reverse">
 			<header class="title-servicos">
@@ -168,4 +175,5 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 			</div>
 		</div>	
 	</article>
+	<?php } ?>
 	

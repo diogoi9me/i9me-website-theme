@@ -64,8 +64,8 @@
 					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
 						<figcaption class="groupboxes__legend">
 							<div class="groupboxes__border <?php if( $contador % 2 == 0 ) { echo 'groupboxes__border--right'; } ?>">
-								<span class="groupboxes__subtitle"><?php echo $service_post->post_title; ?></span>
-								<h5 class="groupboxes__title"><?php echo  $customer_post->post_title; ?></h5>
+								<h5 class="groupboxes__title"><?php echo $service_post->post_title; ?></h5>
+								<span class="groupboxes__subtitle"><?php echo  $customer_post->post_title; ?></span>
 							</div>
 						</figcaption>
 				</figure>
