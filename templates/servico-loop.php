@@ -43,7 +43,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 					<figure class="box__lapis"></figure>  
 				</div>
 
-				<div class="boxes__box-right">
+				<div class="boxes__box-right padding-horizontal">
 
 					<ul class="lista lista--design right-padding--col-inter">
 						<?php
@@ -109,7 +109,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 				</p>
 			</header>
 			<div class="container-full">
-				<div class="boxes__box-right">
+				<div class="boxes__box-right padding-horizontal">
 					<ul class="lista lista--web left-padding--col-inter">
 						<?php
 							$tax_slug =  'tipo-de-servico';

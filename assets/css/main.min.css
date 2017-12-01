@@ -11498,11 +11498,11 @@ button:hover {
         float: left;
         clear: none;
         text-align: inherit;
-        width: 67%;
+        width: 150px;
         margin-left: 0;
         margin-right: 0;
-        text-align: center;
-        margin-top: 15px
+        text-align: left;
+        margin-top: 0;
     }
     .header__brand--footer .header__name:after {
         content: "";
@@ -12061,14 +12061,17 @@ button:hover {
     padding-top: 45px
 }
 
-.banner {
+section.banner {
     float: left;
     clear: none;
     text-align: inherit;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    position: relative
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
 }
 
 .banner:after {
@@ -12253,27 +12256,16 @@ button:hover {
 }
 
 .banner__objeto-scroll {
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    -webkit-transform: translateY(170%);
-    -moz-transform: translateY(170%);
-    -ms-transform: translateY(170%);
-    -o-transform: translateY(170%);
-    transform: translateY(170%);
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center
+    position: absolute;
+    display: block;
+    width: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 0px;
 }
 
 .banner__objeto-scroll:after {
@@ -12282,25 +12274,6 @@ button:hover {
     clear: both
 }
 
-@media only screen and (min-width:767px) {
-    .banner__objeto-scroll {
-        -webkit-transform: translateY(50%);
-        -moz-transform: translateY(50%);
-        -ms-transform: translateY(50%);
-        -o-transform: translateY(50%);
-        transform: translateY(50%)
-    }
-}
-
-@media only screen and (min-width:1023px) {
-    .banner__objeto-scroll {
-        -webkit-transform: translateY(35px);
-        -moz-transform: translateY(35px);
-        -ms-transform: translateY(35px);
-        -o-transform: translateY(35px);
-        transform: translateY(35px)
-    }
-}
 
 .banner .scroll-icon {
     display: -webkit-box;
@@ -14833,7 +14806,7 @@ section.blog .header-section__title:before {
 
 @media only screen and (min-width:767px) {
     .groupboxes {
-        padding: 60px 0;
+        padding: 30px 0;
         margin-bottom: 0
     }
 }
@@ -15333,7 +15306,6 @@ section.blog .header-section__title:before {
         width: 50%;
         margin-left: 0;
         margin-right: 0;
-        padding: 60px 0
     }
     .boxes__box-right:after {
         content: "";

@@ -3,7 +3,7 @@
 	$resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
 	$resumoSection = $resumoSection[0];
  ?>
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
 	<header class="header-section">
 		<div class="header-section__box">
 			<h2 class="header-section__title wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0s"><span>Portfólio</span></h2>

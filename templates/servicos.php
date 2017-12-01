@@ -3,7 +3,7 @@
 	$resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
 	$resumoSection = $resumoSection[0];
 ?>
-<section class="servicos">
+<section class="servicos" id="servicos">
 	<div class="servicos__layertop">
 		<header class="header-section">
 			<div class="header-section__box header-section__box--before-blue">

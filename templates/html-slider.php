@@ -8,12 +8,11 @@
         <div class="banner__info">
  
           <h2 class="banner__title">Desenvolvimento WEB<br />e DESIGN Criativo</h2>
-          <p class="banner__subtitle">E-COMMERCE, SITES E BLOGS. IDENTIDADE VISUAL, UX/UI DESIGN E ILUSTRAÇÃO.</p>
-          <div class="banner__objeto-scroll">
-            <a href="#" class="scroll-icon"></a>
-          </div>
-  
+          <p class="banner__subtitle">E-COMMERCE, SITES E BLOGS. IDENTIDADE VISUAL, UX/UI DESIGN E ILUSTRAÇÃO.</p>  
         </div>
       </div>
+    </div>
+    <div class="banner__objeto-scroll padding-bottom">
+      <a href="#portfolio" class="scroll-icon"></a>
     </div>
 </section>
