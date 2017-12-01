@@ -41,9 +41,10 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						</p>
 					</header> 
 
-					<figure class="box-parallax" data-paroller-factor="0.10">
-						<span class="box-parallax__front" data-paroller-factor="-0.02"></span>
-						<span class="box-parallax__middle" data-paroller-factor="0.17"></span>
+					<figure class="box-parallax" data-paroller-factor="0.25">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-design-front-img.png" class="box-parallax__front-img" data-paroller-factor="0.10" data-paroller-type="foreground" data-paroller-direction="vertical"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-design-middle-img.png" class="box-parallax__middle-img" data-paroller-factor="-0.10" data-paroller-type="foreground">
+						
 					</figure>
 
 					<!-- <figure class="box__lapis"></figure> -->
@@ -177,9 +178,12 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 					</header> 
 					 
 					<!-- <figure class="box__smarthphone"></figure> -->
-					<figure class="box-parallax" data-paroller-factor="0.075">
-						<span class="box-parallax__front" data-paroller-factor="-0.075"></span>
-						<!-- <img class="box-parallax__front" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-front.png'; ?>"> -->
+					<figure class="box-parallax">
+						<!-- <span class="box-parallax__front" data-paroller-factor="-0.075"></span> -->
+						<img class="box-parallax__front-img" data-paroller-factor="0.05" data-paroller-type="foreground" data-paroller-direction="vertical" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-front-img.png'; ?>">
+
+						<img class="box-parallax__back-img" data-paroller-factor="-0.20" data-paroller-type="foreground" data-paroller-direction="vertical" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-back-img.png'; ?>">
+
 					</figure>
 										
 				</div>
