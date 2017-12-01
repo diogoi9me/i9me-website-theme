@@ -332,6 +332,61 @@ HEADER
 FIM - HEADER
 */
 
+
+.box-parallax{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: -100px;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    height: calc(100% + 100px);
+    z-index: 0;
+}
+
+.servicos__design .box-parallax{
+    max-width: 524px;
+    background: url('../images/service-design-back.png') no-repeat bottom left;
+    left: 0;
+}
+
+.servicos__web .box-parallax{
+    max-width: 524px;
+    background: url('../images/service-web-back.png') no-repeat bottom left;
+    right: 0;
+    z-index: 0;
+}
+
+.box-parallax__middle,
+.box-parallax__front{
+    position: absolute;
+    display: block;
+    bottom: 0;
+}
+
+.servicos__design  .box-parallax__middle{
+    background: url('../images/service-design-middle.png') no-repeat bottom left;
+    width: 100%; 
+    height: 100%;
+    z-index: 0;
+}
+
+.servicos__design  .box-parallax__front{
+    background: url('../images/service-design-front.png') no-repeat bottom left;
+    width: 100%; 
+    height: 100%;
+    z-index: 1;
+}
+
+.servicos__web  .box-parallax__front{
+    background: url('../images/service-web-front.png') no-repeat bottom left;
+    width: 100%; 
+    height: 100%;
+    z-index: 1;
+}
+
 /*==========================================
 ADITIVOS - DIOGO - FIM
 ==========================================*/
@@ -9722,24 +9777,24 @@ ADITIVOS - DIOGO - FIM
     display: inline-block
 }
 
-.atendimento,
+section.atendimento,
 .banner,
 .banner-single,
-.blog,
+section.blog,
 .blog-boxe,
 .blog__conteudo,
 .boxes,
 .boxes__box-left,
 .boxes__box-right,
 .breadcrumb,
-.clientes,
+section.clientes,
 .clientes__carousel,
 .col-half,
 .contatos,
 .criacao,
 .criacao-ou-redesenho-de-logotipos,
 .criacao__fase,
-.depoimentos,
+section.depoimentos,
 .dna,
 .equipe,
 .footer,
@@ -9762,11 +9817,11 @@ ADITIVOS - DIOGO - FIM
 .page-servico,
 .page-sobre,
 .pages,
-.portfolio,
+section.portfolio,
 .portfolio__conteudo,
 .resultados,
 .section,
-.servicos,
+section.servicos,
 .servicos__design,
 .servicos__web,
 .sobre,
@@ -9998,6 +10053,10 @@ COMEÇANDO O @mediaqueries - DIOGO
 /*=====
 Padroes Diogo Responsive - PC
 ======*/
+
+.max-size-width{
+    max-width: 1240px;
+}
 
 /*=====
 Espaçamentos PC
@@ -11203,7 +11262,7 @@ blockquote.right {
     margin-right: 0;
     height: 65px;
     border: 1px solid #eee;
-    margin: 30px 0 0;
+    margin: 60px 0 0 0;
     text-align: center
 }
 
@@ -11213,20 +11272,24 @@ blockquote.right {
     clear: both
 }
 
-.controls a[rel=prev] {
+.controls a[rel=prev],
+.controls a.prev-post{
     background: url(../images/control-left.png) no-repeat;
     float: left
 }
 
 .controls a[rel=next],
-.controls a[rel=prev] {
+.controls a[rel=prev],
+.controls a.next-post,
+.controls a.prev-post{
     width: 30px;
     height: 22px;
     display: inline-block;
     margin: 20px
 }
 
-.controls a[rel=next] {
+.controls a[rel=next],
+.controls a.next-post {
     background: url(../images/control-right.png) no-repeat;
     float: right
 }
@@ -11999,7 +12062,7 @@ button:hover {
     overflow: hidden
 }
 
-.scrollOn {
+header.scrollOn {
     background: #fff;
     color: #005193;
     z-index: 999999999999999;
@@ -12008,7 +12071,8 @@ button:hover {
     -webkit-transition: all .5s;
     -o-transition: all .5s;
     -moz-transition: all .5s;
-    transition: all .5s
+    transition: all .5s;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.35);
 }
 
 .scrollOn .header__logo {
@@ -12151,50 +12215,23 @@ section.banner {
 
 @media only screen and (min-width:767px) {
     .banner__info {
-        margin-top: 73px;
-        min-height: 264px;
-        max-width: 420px;
-        margin: 0 auto;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -moz-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -moz-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -ms-grid-column-align: center;
-        justify-items: center;
-        position: relative;
-        -webkit-transform: translateY(50%);
-        -moz-transform: translateY(50%);
-        -ms-transform: translateY(50%);
-        -o-transform: translateY(50%);
-        transform: translateY(50%)
-    }
-}
-
-@media only screen and (min-width:1023px) {
-    .banner__info {
-        margin: 0 auto;
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
         min-height: 210px;
         max-width: 670px;
         display: block;
         width: 100%;
-        -webkit-transform: translateY(100%);
-        -moz-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-        -o-transform: translateY(100%);
-        transform: translateY(100%)
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform:translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
     }
 }
+
+
 
 .banner__title {
     font: 700 1.5625rem Rajdhani, Arial, helvetica, sans-serif;
@@ -12467,18 +12504,7 @@ section.banner {
     }
 }
 
-.servicos__design:after {
-    content: "";
-    background: url(../images/after-servicos.png) no-repeat;
-    position: relative;
-    bottom: -670px;
-    z-index: 99999;
-    max-width: 30px;
-    width: 100%;
-    height: 20px;
-    display: block;
-    margin: 0 auto
-}
+
 
 .servicos__web {
     position: relative;
@@ -12976,7 +13002,7 @@ section.blog {
     }
 }
 
-.atendimento {
+section.atendimento {
     background: url(../images/bg_atendimento.png);
     background-position: 50%;
     -webkit-background-size: cover;
@@ -15218,6 +15244,7 @@ section.blog .header-section__title:before {
 }
 
 .boxes__box-left {
+    position: relative;
     float: left;
     clear: none;
     text-align: inherit;
@@ -15743,11 +15770,6 @@ section.blog .header-section__title:before {
     margin: 20px 0
 }
 
-@media only screen and (min-width:767px) {
-    .portfolio-interna {
-        margin: 90px 0
-    }
-}
 
 .portfolio-interna__vermais {
     margin: 60px 0
@@ -15755,7 +15777,6 @@ section.blog .header-section__title:before {
 
 .page-portfolio {
     position: relative;
-    margin-bottom: 60px;
     margin-top: -1px
 }
 
@@ -15828,39 +15849,227 @@ section.blog .header-section__title:before {
     margin: 15px 0 0
 }
 
+/*====================================================
+Single Portfólio - Blocos de Conteúdo - Diogo
+====================================================*/
+
+.page-portfolio__grid{
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.page-portfolio__grid--left,
+.page-portfolio__grid--right{
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+/*================
+Responsive - SMARTPHONE
+================*/
+
+.page-portfolio__grid--left,
+.page-portfolio__grid--right{
+    width: 100%;
+    max-height: 350px;
+}
+
+
+.grid-captions{
+    position: absolute;
+    display: block;
+    width: 100%;
+    z-index: 2;
+    top: 15px;
+}
+
+.grid-captions__title{
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.dark .grid-captions__title,
+.dark .grid-captions__subtitle,
+.dark .grid-captions__resume{
+    color: #FFF;
+}
+
+
+.grid-captions__subtitle{
+    position: relative;
+    display: block;
+    margin: 0 0 10px 0;
+    padding: 0;
+    width: auto;
+    font-weight: normal;
+}
+
+.grid-captions__subtitle a{
+    background: #005193;
+    color: #FFF;
+    padding: 5px 10px;
+}
+
+.grid-captions__subtitle--strong{
+    font-weight: bold;
+}
+
+.grid-captions__resume{
+    font-size: 16px;
+    text-align: justify;
+}
+
+.grid-image{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.page-portfolio__simple{
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.page-portfolio__simple-captions{
+    position: relative;
+    display: block;
+}
+
+
+.simple-captions__header{}
+.simple-captions__header-title{
+    position: relative;
+    margin: 0;
+    padding: 0 0 15px 0;
+    font-size: 30px;
+    color: #005193;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.simple-captions__header-title:after{
+   position: absolute;
+   display: block;
+   width: 70px;
+   height: 1px;
+   background: #CCC;
+   content: "";
+   bottom: 0px;
+   left: 50%;
+   -moz-transform: translateX(-50%);
+   -webkit-transform: translateX(-50%);
+   -o-transform: translateX(-50%);
+   transform: translateX(-50%);
+
+}
+.simple-captions__header-resume{
+    text-align: justify;
+    letter-spacing: 2px;
+    margin: 30px 0;
+}
+
+.page-portfolio__simple-image{
+    position: relative;
+    display: block;
+}
+.page-portfolio__simple-image img{
+    max-width: 100%;
+}
+
+
+
+/*====================================================
+FIM - Single Portfólio - Blocos de Conteúdo - Diogo
+====================================================*/
+
 @media only screen and (min-width:767px) {
     .page-portfolio__subtitle strong {
         margin: 0
     }
+
+
+/*================
+Responsive - TABLET
+================*/
+
+.page-portfolio__grid--left,
+.page-portfolio__grid--right{
+    width: 50%;
+    max-height: 350px;
+    float: left;
+}
+
+.grid-captions{
+    top: 60px;
+}
+
+.grid-captions__title{
+    font-size: 35px;
+    margin: 0 0 15px 0;
+}
+
+.grid-captions__subtitle a{
+    padding: 10px 15px;
+    margin: 0 0 15px 0;
+}
+
+
+.simple-captions__header-resume{
+    text-align: center;
+}
+
+.colls-3x1 .page-portfolio__simple-captions,
+.colls-1x3 .page-portfolio__simple-captions{
+    width: 60%;
+}
+.colls-3x1 .page-portfolio__simple-image,
+.colls-1x3 .page-portfolio__simple-image{
+    width: 40%;
+}
+
+.colls-3x1 .page-portfolio__simple-captions,
+.colls-1x3 .page-portfolio__simple-image{
+    float: left;
+}
+.colls-1x3 .page-portfolio__simple-captions,
+.colls-3x1 .page-portfolio__simple-image{
+    float: right;
+}
+
+.colls-2x2 .page-portfolio__simple-captions,
+.colls-2x2 .page-portfolio__simple-image{
+    width: 50%;
+    float: left;
+}
+
+
+
 }
 
 .page-portfolio__blocos {
-    float: left;
     clear: none;
-    text-align: inherit;
+    display: table;
+    margin: 0;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
     position: relative;
-    height: 700px
+    text-align: inherit;
 }
 
 .page-portfolio__blocos:after {
     content: "";
     display: table;
     clear: both
-}
-
-@media only screen and (min-width:767px) {
-    .page-portfolio__blocos {
-        height: 350px
-    }
-}
-
-@media only screen and (min-width:1023px) {
-    .page-portfolio__blocos {
-        min-height: 350px
-    }
 }
 
 .page-portfolio__bloco-left {
@@ -15910,6 +16119,68 @@ section.blog .header-section__title:before {
         -o-object-fit: cover;
         object-fit: cover
     }
+
+
+
+/*================
+Responsive - PC
+================*/
+
+.page-portfolio__grid--left,
+.page-portfolio__grid--right{
+    width: 50%;
+    max-height: 350px;
+    float: left;
+}
+
+.grid-captions{
+    top: 60px;
+}
+
+.grid-captions__title{
+    font-size: 35px;
+    margin: 0 0 20px 0;
+}
+
+.grid-captions__subtitle{
+    margin: 0 0 20px 0;
+}
+
+.grid-captions__subtitle a{
+    padding: 10px 15px;
+}
+
+.simple-captions__header-resume{
+    text-align: center;
+}
+
+
+.colls-3x1 .page-portfolio__simple-captions,
+.colls-1x3 .page-portfolio__simple-captions{
+    width: 60%;
+}
+.colls-3x1 .page-portfolio__simple-image,
+.colls-1x3 .page-portfolio__simple-image{
+    width: 40%;
+}
+
+.colls-3x1 .page-portfolio__simple-captions,
+.colls-1x3 .page-portfolio__simple-image{
+    float: left;
+}
+.colls-1x3 .page-portfolio__simple-captions,
+.colls-3x1 .page-portfolio__simple-image{
+    float: right;
+}
+
+.colls-2x2 .page-portfolio__simple-captions,
+.colls-2x2 .page-portfolio__simple-image{
+    width: 50%;
+    float: left;
+}
+
+
+
 }
 
 @media only screen and (min-width:767px) {
@@ -16336,13 +16607,11 @@ section.blog .header-section__title:before {
 }
 
 .page-portfolio__header-btn {
-    float: left;
-    clear: none;
-    text-align: inherit;
+    position: relative;
+    display: block;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 50px
+    margin: 0px 0px 50px 0px;
+    text-align: center;
 }
 
 .page-portfolio__header-btn:after {
@@ -16361,20 +16630,9 @@ section.blog .header-section__title:before {
     display: inline-block
 }
 
-.page-portfolio__area-img {
-    float: left;
-    clear: none;
-    text-align: inherit;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 15px
-}
-
-.page-portfolio__area-img:after {
-    content: "";
-    display: table;
-    clear: both
+.page-portfolio__header-btn a:hover {
+    background: #005193;
+    color: #FFF;
 }
 
 @media only screen and (min-width:767px) {

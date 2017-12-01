@@ -10,6 +10,10 @@ function call_script() {
     wp_enqueue_style('css-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), null);
     wp_register_script('main', get_template_directory_uri() . '/assets/js/main.min.js', array(), '', true);
     wp_enqueue_script('main');
+    wp_enqueue_script('parallax', get_template_directory_uri() . '/assets/js/jquery.paroller.js', array(), '', true);
+
+    
+
 }
 
 add_action('wp_enqueue_scripts', 'call_script', 100);

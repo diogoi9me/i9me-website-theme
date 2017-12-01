@@ -41,7 +41,7 @@
 			<?php get_template_part('breadcrumb');?>
 		</div>
 	</div>
-<article class="page-portfolio">
+<article class="page-portfolio padding-bottom">
 	<?php 
 		$post_id = get_the_ID();
 		$childargs = array(
@@ -59,6 +59,9 @@
 	    $tipo = $tipo[0];
 	    $estilo = get_post_custom_values('wpcf-block-estyle');
 	    $estilo = $estilo[0];
+	    $color = get_post_custom_values('wpcf-color');
+	    $color = $color[0];
+	    if( $color != '' ) { $printColor = 'style="background: ' . $color . ';"'; } else { $printColor = ''; } 
 	    $estrutura = get_post_custom_values('wpcf-block-structure');
 	    $estrutura = $estrutura[0];
 	    $miniatura = get_post_custom_values('wpcf-miniatura');
@@ -125,76 +128,85 @@
 		    $bloco5_conteudo = get_post_custom_values('wpcf-block-05-content');
 		    $bloco5_conteudo = $bloco5_conteudo[0];
 	?>
-	<section class="page-portfolio__blocos">
-		<div class="page-portfolio__bloco-left <?php echo $estilo; ?>">
-			<img src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>, <?php the_title() ?>">
-		</div>
-		<div class="page-portfolio__bloco-right">
-			<img src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>, <?php the_title() ?>">
-		</div>
-		<div class="container">
-			<div class="page-portfolio__info-left">
-				<h4 class="page-portfolio__title"><?php echo $bloco1_titulo; ?></h4>
-				<div class="page-portfolio__subtitle">
-					<strong>Cliente: <a href="<?php echo $customer_link; ?>"><?php echo  $customer_post->post_title; ?></a></strong>
-					
-					<p>
-						<?php echo $bloco1_conteudo; ?>
-					</p>
+
+		<section class="page-portfolio__grid <?php echo $estilo; ?>" <?php echo $printColor; ?> >
+			
+			<div class="page-portfolio__grid--left">
+				<div class="grid-captions padding-vertical--inter">
+					<h4 class="grid-captions__title"><?php echo $bloco1_titulo; ?></h4>	
+					<h5 class="grid-captions__subtitle">
+						<a href="<?php echo $customer_link; ?>">Cliente: <strong class="grid-captions__subtitle--strong"><?php echo  $customer_post->post_title; ?></strong></a>
+					</h5>	
+					<p class="grid-captions__resume"><?php echo $bloco1_conteudo; ?></p>	
 				</div>
+				<img class="grid-image" src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>, <?php the_title() ?>">
 			</div>
-			<div class="page-portfolio__info-right">
-				<h4 class="page-portfolio__title"><?php echo $bloco2_titulo; ?></h4>
-				<div class="page-portfolio__subtitle">
-					<strong>Serviço: <a href="<?php echo $service_link; ?>"><?php echo  $service_post->post_title; ?></a></strong>
-				
-				<p>	
-					<?php echo $bloco2_conteudo; ?>
-				</p>
+
+			<div class="page-portfolio__grid--right">
+				<div class="grid-captions padding-vertical--inter">
+					<h4 class="grid-captions__title"><?php echo $bloco2_titulo; ?></h4>	
+					<h5 class="grid-captions__subtitle">
+						<a href="<?php echo $customer_link; ?>">Serviço: <strong class="grid-captions__subtitle--strong"><?php echo  $service_post->post_title; ?></strong></a>
+					</h5>	
+					<p class="grid-captions__resume"><?php echo $bloco2_conteudo; ?></p>	
 				</div>
-			</div>			
-		</div>
-	</section>
-	<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-full' ) { ?>
-	<section class="page-portfolio__websites">
-		<div class="container">
-			<header class="page-portfolio__header">
-				<h2 class="page-portfolio__header-title"><?php echo the_title(); ?></h2>
-				<p  class="page-portfolio__header-subtitle"><?php echo get_the_content(); ?></p>
-				<?php if ( $url_link ) { ?>
-				<div class="page-portfolio__header-btn">
-					<a href="<?php echo $url_link; ?>" target="_blank"><?php if ( $url_title ) { echo $url_title; } else { echo 'Acesse!'; } ?></a>
-				</div>
-				<?php } ?>
-			</header>
-		</div>
-		<div class="page-portfolio__area-img">
-			<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
-		</div>
-	</section>
-	<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-2x2' ) { ?>
-	<section class="page-portfolio__seo">
-		<div class="container">
-			<div class="page-portfolio__box-info">
-				<header class="page-portfolio__header">
-					<h2 class="page-portfolio__header-title"><?php echo the_title(); ?></h2>
-					<p  class="page-portfolio__header-subtitle"><?php echo get_the_content(); ?></p>
-				</header>
+				<img class="grid-image" src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>, <?php the_title() ?>">
 			</div>
-			<div class="page-portfolio__box-imagem">
+
+		</section>
+		
+		<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-full' ) { ?>
+		
+		<section class="page-portfolio__simple colls-full padding-top" <?php echo $printColor; ?> >
+			
+			<div class="page-portfolio__simple-captions padding-vertical--inter">
+					<header class="simple-captions__header">
+						<h2 class="simple-captions__header-title"><?php echo the_title(); ?></h2>
+						<p  class="simple-captions__header-resume"><?php echo get_the_content(); ?></p>
+					</header>
+
+					<?php if ( $url_link ) { ?>
+					<div class="page-portfolio__header-btn">
+						<a href="<?php echo $url_link; ?>" target="_blank"><?php if ( $url_title ) { echo $url_title; } else { echo 'Acesse!'; } ?></a>
+					</div>
+					<?php } ?>
+			</div>
+			<div class="page-portfolio__simple-image">
 				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
 			</div>
-		</div>
-	</section>
+		</section>
+
+		<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-2x2' || $tipo == 'simple' && $estrutura == 'colls-1x3' || $tipo == 'simple' && $estrutura == 'colls-3x1' ) { ?>
+		
+		<section class="page-portfolio__simple <?php echo $estrutura; ?> padding-vertical padding-horizontal" <?php echo $printColor; ?> >
+				<div class="page-portfolio__simple-captions <?php if ( $estrutura == 'colls-3x1' || $estrutura == 'colls-2x2' ) { echo 'padding-right--inter'; } elseif( $estrutura == 'colls-1x3' ) { echo 'padding-left--inter'; } ?>">
+					<header class="simple-captions__header">
+						<h2 class="simple-captions__header-title"><?php echo the_title(); ?></h2>
+						<p  class="simple-captions__header-resume"><?php echo get_the_content(); ?></p>
+					</header>
+				</div>
+				<div class="page-portfolio__simple-image">
+					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+				</div>
+		</section>
+
 	<?php } ?>
+
+	
 	<?php endwhile; ?>
 	<?php wp_reset_query(); ?>
-	<div class="controls">
-		
-		<?php previous_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>
-		<a href="<?php echo home_url(); ?>/portfolios/" class="controls__center"></a>
-		<?php next_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>
 	
+
+	<div class="controls">
+		<a class="controls__left">
+			<?php previous_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>
+		</a>
+		
+		<a href="<?php echo home_url(); ?>/portfolios/" class="controls__center"></a>
+		
+		<a class="controls__right">
+			<?php next_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>
+		</a>
 	</div>
 </article>
 <?php get_template_part('templates/newsletter','home');?>

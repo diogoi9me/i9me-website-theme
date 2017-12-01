@@ -1,4 +1,4 @@
-<section class="atendimento padding-bottom" id="atendimentos">
+<section class="atendimento padding-bottom" id="atendimento">
 	<div class="container">
 		<header class="header-section">
 			<div class="header-section__box header-section__box--before-blue">

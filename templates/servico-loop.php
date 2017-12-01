@@ -14,7 +14,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
  ?>
  	<article class="servicos__design" id="design">
 		<div class="boxes">
-			<div class="container-full">
+			<div class="container-full max-size-width">
 
 				<div class="boxes__box-left">
 
@@ -31,6 +31,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 							</p>
 						</div>
 					</header>
+
 					<header class="title-servicos">
 						<h2>Design</h2>
 						<p class="subtitle-servicos">
@@ -40,7 +41,13 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						</p>
 					</header> 
 
-					<figure class="box__lapis"></figure>  
+					<figure class="box-parallax" data-paroller-factor="0.10">
+						<span class="box-parallax__front" data-paroller-factor="-0.02"></span>
+						<span class="box-parallax__middle" data-paroller-factor="0.17"></span>
+					</figure>
+
+					<!-- <figure class="box__lapis"></figure> -->
+
 				</div>
 
 				<div class="boxes__box-right padding-horizontal">
@@ -108,7 +115,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 				 ?>
 				</p>
 			</header>
-			<div class="container-full">
+			<div class="container-full max-size-width">
 				<div class="boxes__box-right padding-horizontal">
 					<ul class="lista lista--web left-padding--col-inter">
 						<?php
@@ -169,7 +176,11 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						
 					</header> 
 					 
-					<figure class="box__smarthphone"></figure>
+					<!-- <figure class="box__smarthphone"></figure> -->
+					<figure class="box-parallax" data-paroller-factor="0.075">
+						<span class="box-parallax__front" data-paroller-factor="-0.075"></span>
+						<!-- <img class="box-parallax__front" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-front.png'; ?>"> -->
+					</figure>
 										
 				</div>
 			</div>
@@ -177,3 +188,8 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 	</article>
 	<?php } ?>
 	
+	<script>
+    jQuery(function () {
+       jQuery(window).paroller();
+    });
+	</script>

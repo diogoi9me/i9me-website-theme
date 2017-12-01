@@ -3,7 +3,16 @@
     <div class="header__menu-desktop">
       <div class="container container--header">
        <div class="header__brand">
-          <a href="<?php echo home_url(); ?>">            
+          <?php if ( is_home() || is_front_page() ) {
+              
+              echo '<a id="scroll-to-up" href="javascript:;">';   
+
+            } else {
+
+              echo '<a href="' . get_home_url() . '">';
+
+            } ?>
+
               <h1 class="header__logo">
               
                   <span class="header__letter header--i">I</span>
@@ -20,10 +29,24 @@
 
       <a href="#menu" class="header__toggle"><span></span></a>
 
-        <?php  wp_nav_menu( array(
-          'theme_location'  => 'menu_1', 
+        <?php
+
+          if( is_home() || is_front_page() ) {
+            
+            $nameNav = 'scroll-nav'; 
+
+          } else {
+
+            $nameNav = 'page-nav';
+
+          }
+          wp_nav_menu( array(
+          'menu'        => $nameNav, 
           'menu_class'      => 'menu__nav ',
-          'container_class' => 'header__menu'.$css.'')); ?>
+          'container_class' => 'header__menu'.$css.'',
+        ));
+
+        ?>
 
          <div class="header__redes">
               <div class="header__redestop">
@@ -38,4 +61,4 @@
       </div>
     </div>
   </header>
-  <main class="main">
+  <main id="up" class="main">

@@ -1,13 +1,16 @@
 <?php 
 	if( is_home() || is_front_page() ) {
+
 		$limit_res = '4';
 		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'ASC' );
+	
 	} elseif( is_single() && get_post_type() == 'cliente'  ) {
-		$limit_res = '20';
+	
+		$limit_res = '4';
 		$post_id = get_the_ID();
 		$args = array(
 		'post_type' => 'portfolio',
-		'numberposts' => $limit_res,
+		'posts_per_page' => $limit_res,
 		//'meta_key' => 'wpcf-order',
 		'orderby' => 'date',
 		'order' => 'ASC',
@@ -15,20 +18,26 @@
 		);
 
 	} elseif( is_single() && get_post_type() == 'servico'  ) {
-		$limit_res = '20';
+	
+		$limit_res = '4';
 		$post_id = get_the_ID();
 		$args = array(
 		'post_type' => 'portfolio',
-		'numberposts' => $limit_res,
+		'posts_per_page' => $limit_res,
 		//'meta_key' => 'wpcf-order',
 		'orderby' => 'date',
 		'order' => 'ASC',
 		'meta_query' => array(array('key' => '_wpcf_belongs_servico_id', 'value' => $post_id ))
 		);
-	} else {
-		$limit_res = '20';
-		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'ASC' );
+	
+	} else {	
+
+		$limit_res = '10';
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'ASC', 'paged' => $paged );
+	
 	}
+
 ?>
 	<ul class="item" id="portfolio">
 		<?php $loop = new WP_Query( $args );
@@ -74,7 +83,15 @@
 		<?php $contador += 1; //Incrementa o contador para a próxima iteração do loop ?>
 		<?php endwhile; ?> 
 		</ul>
-		<?php if( !is_home() && !is_front_page() ) { ?>
+		<?php if( !is_home() && !is_front_page()  && !is_single() ) { ?>
+			<!-- pagination -->
+			<div class="controls">
+	        	
+	            <?php echo get_previous_posts_link( '' ); ?>
+	            <a href="<?php echo home_url(); ?>/portfolios/" class="controls__center"></a>
+	            <?php echo get_next_posts_link( '', $loop->max_num_pages ); ?>
+	        	
+	        </div>
 			 
 		<?php } ?>  	
 	

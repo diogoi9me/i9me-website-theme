@@ -1,4 +1,4 @@
-<section class="blog padding-bottom" id="blogs">
+<section class="blog padding-bottom" id="blog">
 	<header class="header-section">
 		<div class="header-section__box">
 			<h2 class="header-section__title wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0s"><span>Blog</span></h2>
