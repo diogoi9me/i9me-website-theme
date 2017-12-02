@@ -10082,6 +10082,165 @@ Fora @mediaqueries - DIOGO
 ===============================*/
 
 /*=============================
+Align
+===============================*/
+
+.align-center{
+    text-align: center;
+}
+.inline-block{
+    display: inline-block;
+}
+
+/*=============================
+Form
+===============================*/
+
+.form-i9me{
+    position: relative;
+    display: table;
+    width: 100%;
+}
+
+.form-i9me fieldset{
+    position: relative;
+    display: block;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.form-i9me input[type="text"],
+.form-i9me input[type="email"],
+.form-i9me input[type="tel"]{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #DDD;
+    background-color: #FFF;
+    padding: 18px 5px 5px 5px;
+}
+.form-i9me textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    border: 1px solid #DDD;
+    background-color: #FFF;
+    padding: 18px 5px 5px 5px;
+}
+
+.form-i9me label{
+    position: absolute;
+    display: block;
+    top: 0;
+    width: auto;
+    line-height: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 4px 0px 0px 5px;
+    z-index: 1;
+}
+
+.form-i9me .coll{
+    margin: 5px 0;
+}
+
+
+/*=============================
+Columns
+===============================*/
+
+.colls--table-relative{
+    position: relative;
+    display: table;
+    width: 100%; 
+}
+
+
+.coll--coll-1x2{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.coll--coll-2x2{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+/*===============================
+Sections & SubSections
+===============================*/
+.header-subsection{
+    position: relative;
+}
+
+.header-subsection__title{
+    position: relative;
+    display: block;
+    font-size: 25px;
+    height: 25px;
+    line-height: 25px;
+    letter-spacing: 3px;
+    margin: 0px;
+    padding: 0px 0px 0px 62px;
+    font-weight: bold;
+}
+.header-subsection__title--blue{
+    color: #007cdb;
+}
+.header-subsection__icon{
+    position: absolute;
+    display: block;
+    width: 52px;
+    height: 40px;
+    background: blue;
+    left: 0px;
+    top: 0px;
+}
+
+.header-subsection__resume{
+    position: relative;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 62px;
+    letter-spacing: 2px;
+}
+
+/*===============================
+Atendimento
+================================*/
+.page-atendimento__talkme{
+    padding: 0 5%;
+}
+.page-atendimento__talkme .header-subsection{
+    margin-bottom: 15px;
+}
+.page-atendimento__contacts{
+    padding: 0 5%;
+}
+.page-atendimento__map{}
+
+.header-subsection--hidden{
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+    padding: 50px 0 0 0;
+}
+.header-subsection--hidden h2,
+.header-subsection--hidden h3{
+    position: absolute;
+    display: block;
+}
+
+
+/*=============================
 COMEÇANDO O @mediaqueries - DIOGO
 ===============================*/
 
@@ -10227,7 +10386,63 @@ FIM - Padroes Diogo Responsive - PC
 
 @media only screen and (min-width:767px) {
 
-    /*=====
+
+/*=============================
+Responsive - TABLET
+===============================*/
+
+/*=============================
+Columns
+===============================*/
+.coll--coll-1x2{
+    width: 50%;
+    float: left;
+}
+.coll--coll-2x2{
+    width: 100%;
+    float: left;
+}
+
+.colls--spacing .coll--coll-1x2:nth-child(odd){
+    padding-right: 10px;
+}
+.colls--spacing .coll--coll-1x2:nth-child(even){
+    padding-left: 10px;
+}
+
+/*===============================
+Atendimento
+================================*/
+.page-atendimento__talkme{
+    padding: 0% 5%;
+}
+.page-atendimento__contacts{
+    padding: 0% 5% 0% 0%;
+}
+.page-atendimento__map{}
+
+/*=============================
+Form
+===============================*/
+
+.form-i9me input[type="text"],
+.form-i9me input[type="email"],
+.form-i9me input[type="tel"]{
+    height: 70px;
+    padding: 20px 5px 5px 5px;
+}
+.form-i9me textarea{
+    height: 120px;
+}
+
+.form-i9me .coll{
+    margin: 10px 0;
+}
+
+
+
+
+/*=====
 Padroes Diogo Responsive - TABLET
 ======*/
 
