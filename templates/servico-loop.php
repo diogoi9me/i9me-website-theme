@@ -42,7 +42,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 					</header> 
 
 					<figure class="box-parallax" data-paroller-factor="0.25">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-design-front-img.png" class="box-parallax__front-img" data-paroller-factor="0.10" data-paroller-type="foreground" data-paroller-direction="vertical"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-design-front-img.png" class="box-parallax__front-img" data-paroller-factor="0.10" data-paroller-type="foreground"/>
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/service-design-middle-img.png" class="box-parallax__middle-img" data-paroller-factor="-0.10" data-paroller-type="foreground">
 						
 					</figure>
@@ -77,7 +77,6 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 							<figure>
 								<a href="<?php echo get_permalink(); ?>">
 									<div class="lista__bordas wow zoomIn" data-wow-duration="0.25" data-wow-delay="0">
-											<!-- Colocar um BG na tag <i> utilizando a classe correspondente ao icone-->
 											<i class="servicos__<?php echo $slug; ?>">
 												<img class="icon" src="<?php echo $icone; ?>" alt="<?php echo the_title(); ?>" />
 												<img class="icon-hover" src="<?php echo $icone_hover; ?>" alt="<?php echo the_title(); ?>" />
@@ -179,7 +178,6 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 					 
 					<!-- <figure class="box__smarthphone"></figure> -->
 					<figure class="box-parallax">
-						<!-- <span class="box-parallax__front" data-paroller-factor="-0.075"></span> -->
 						<img class="box-parallax__front-img" data-paroller-factor="0.05" data-paroller-type="foreground" data-paroller-direction="vertical" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-front-img.png'; ?>">
 
 						<img class="box-parallax__back-img" data-paroller-factor="-0.20" data-paroller-type="foreground" data-paroller-direction="vertical" src="<?php echo get_template_directory_uri() . '/assets/images/service-web-back-img.png'; ?>">
@@ -191,9 +189,3 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 		</div>	
 	</article>
 	<?php } ?>
-	
-	<script>
-    jQuery(function () {
-       jQuery(window).paroller();
-    });
-	</script>
