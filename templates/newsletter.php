@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="newsletter__news">			
 			<div class="newsletter__item newsletter__item--info">
-				<p class="newsletter__title">Lorem ipsum dolor sit am</p>
-					<span class="newsletter__subtitle">Lorem ipsum dolor sit amet, consectetur</span>
+				<p class="newsletter__title">Newsletter</p>
+					<span class="newsletter__subtitle">Receba as nossas novidades no seu e-mail</span>
 			</div>
 			<div class="newsletter__item">
 				<form action="" class="newsletter__form">
@@ -12,8 +12,8 @@
 			</div>
 			<div class="newsletter__item newsletter__item--redes">
 				
-				<a href="#" class="fa fa-facebook" aria-hidden="true"></a>
-	            <a href="#" class="fa fa-instagram" aria-hidden="true"></a>
+				<a href="https://www.facebook.com/i9mewebdesign/" target="_blank" class="fa fa-facebook" aria-hidden="true"></a>
+	            <a href="https://www.instagram.com/i9mewebdesign/" target="_blank" class="fa fa-instagram" aria-hidden="true"></a>
 	            <a href="#" class="fa fa-google-plus" aria-hidden="true"></a>
 	            <a href="#" class="fa fa-behance" aria-hidden="true"></a>
 			

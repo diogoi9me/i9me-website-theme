@@ -50,8 +50,8 @@
 
          <div class="header__redes">
               <div class="header__redestop">
-                  <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  <a href="https://www.facebook.com/i9mewebdesign/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                  <a href="https://www.instagram.com/i9mewebdesign/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
               </div>
               <div class="header__redesbottom">
                   <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>

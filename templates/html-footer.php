@@ -4,30 +4,28 @@
 			<div class="container">
 				<ul class="footer__bloco">
 					<h3 class="footer__title">Design</h3>
-					<li><a href="#">Design de Marcas</a></li>
-					<li><a href="#">Papelaria Corporativa</a></li>
-					<li><a href="#">Anúncios On/Off</a></li>
-					<li><a href="#">Ilustrações</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/identidade-visual">Identidade Visual</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/ux-ui-design">UX / UI Design</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/design-grafico">Design Gráfico</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/ilustracao">Ilustração</a></li>
 				</ul>
 				<ul class="footer__bloco">
 					<h3 class="footer__title">Web</h3>
-					<li><a href="#">Websites</a></li>
-					<li><a href="#">Lojas Virtuais</a></li>
-					<li><a href="#">Campanhas</a></li>
-					<li><a href="#">Consultorias</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/e-commerce">E-commerce</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/site">Site</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/landing-page">Landing Page</a></li>
+					<li><a href="<?php echo get_home_url(); ?>/servicos/seo-buscas">SEO / Buscas</a></li>
 				</ul>
 				<ul class="footer__bloco">
-					<h3 class="footer__title">Contatos</h3>
-						<li class="footer__fones--d"><div><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <strong>(85)3025-0000</strong></div></li>
+					<h3 class="footer__title">Mais</h3>
+						<li class="footer__fones--d"><div><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <strong>(85) 4042-0841</strong></div></li>
 						<li class="footer__fones--d"><div><i class="fa fa-whatsapp" aria-hidden="true"></i> <strong>(85)99862-4149</strong></div></li>
 					
-						<li class="footer__fones"><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <strong>(85)3025-0000</strong></a></li>
+						<li class="footer__fones"><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> <strong>(85) 4042-0841</strong></a></li>
 						<li class="footer__fones"><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> <strong>(85)99862-4149</strong></a></li>
+						<li><a href="<?php echo get_home_url(); ?>/atendimento">Atendimento</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
 						
-						<?php  wp_nav_menu( array(
-	            		'theme_location'  => 'menu_2', 
-	            		'menu_class'      => 'menu__nav ',
-	            		'container_class' => 'footer__menu'.$css.'')); ?>
 				</ul>
 				<div class="footer__bloco footer__bloco--iframe">
 					
