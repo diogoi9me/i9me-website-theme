@@ -10,7 +10,7 @@
 			$args = array( 'post_type' => 'post', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'DESC' );
 		?>
 
-		<ul class="blog-boxe" id="blog">
+		<ul class="blog-boxe" id="<?php if ( wp_is_mobile() && is_home() || wp_is_mobile() && is_front_page() ) { echo 'blog-owl'; } else { echo 'blog--container'; }  ?>">
 			<?php $loop = new WP_Query( $args );
 				
 				$contador = 1; //Iniciado em um para exibir um na primeira iteração
@@ -27,6 +27,7 @@
 					$sizeThumbs = 'medium';
 					$urlThumbnail = wp_get_attachment_image_src($image_id, $sizeThumbs);
 					$urlThumbnail = $urlThumbnail[0];
+					$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
 					} else {
 								$urlThumbnail	= '';
@@ -36,7 +37,7 @@
 		    <li class="blog-boxe__item">
 				<figure class="blog-boxe__figure">
 					<a href="<?php echo get_permalink(); ?>">
-					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 						<figcaption class="blog-boxe__legend">
 							<div class="groupboxes__border groupboxes__border--blog <?php if( $contador % 2 == 0 ) { echo 'groupboxes__border--right groupboxes__border--blog-right'; } ?>">
 								<h5 class="groupboxes__title"><?php echo get_the_title(); ?></h5>

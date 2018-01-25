@@ -35,7 +35,7 @@ if ( has_post_thumbnail() ) {
 ?>
 	<div class="banner-single" <?php echo $bg_banner_single; ?>>
 		<header class="banner-single__header">
-			<h2 class="banner-single__title">SERVIÇOS / <?php  the_title() ?></h2>
+			<h2 class="banner-single__title">Serviços / <?php  the_title() ?></h2>
 			<p class="banner-single__subtitle"><?php echo $resumoPage; ?></p>
 		</header>
 	</div>

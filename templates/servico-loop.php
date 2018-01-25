@@ -10,7 +10,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 	}
  ?>
  <?php 
- 		if ( is_page('design') || is_page('servicos') || is_home() || is_front_page() ) {
+ 		if ( is_page('design') || is_page('servicos') || is_home() || is_front_page() || is_archive()) {
  ?>
  	<article class="servicos__design" id="design">
 		<div class="boxes">
@@ -103,7 +103,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 	</article>
 	<?php } ?>
 	<?php
- 		if ( is_page('web') || is_page('servicos') || is_home() || is_front_page() ) {
+ 		if ( is_page('web') || is_page('servicos') || is_home() || is_front_page() || is_archive() ) {
  	?>  
 	<article class="servicos__web" id="web">
 		<div class="boxes boxes--reverse">

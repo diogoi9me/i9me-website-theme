@@ -1,14 +1,11 @@
 <?php get_template_part('templates/html','header');?>
 
 <?php 
-	global $page;
-	$slug_page=$page->post_name;
+$page = get_page_by_path('blog');
+$resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
+$resumoSection = $resumoSection[0];
+ ?>
 
-	//Busca dados no campo personalizado da Página
-	$resumoPage = get_post_custom_values('wpcf-resume');
-	$resumoPage = $resumoPage[0];
-	$slug_current = basename(get_permalink());
-?>
 <?php 
 
 if ( has_post_thumbnail() ) {
@@ -27,70 +24,39 @@ if ( has_post_thumbnail() ) {
 			}
 
 ?>
-	<div class="banner-single" <?php echo $bg_banner_single; ?>>
+	<div class="banner-single" <?php // echo $bg_banner_single; ?>>
 		<header class="banner-single__header">
-			<h2 class="banner-single__title"><?php the_title() ?></h2>
-			<p class="banner-single__subtitle"><?php echo $resumoPage; ?></p>
+			<!-- <h4>BLOG / ARQUIVO:</h4> -->
+			<h2 class="banner-single__title">BUSCAS NO BLOG</h2>
+			<!-- <p class="banner-single__subtitle"><?php // echo $resumoSection; ?></p> -->
 		</header>
 	</div>
+	
+
 	<div class="breadcrumb">
 		<div class="container">
 			<?php get_template_part('breadcrumb');?>
 		</div>
 	</div>
-	<!-- <div class="criacao__lista-servicos">
-		<ul class="criacao__lista">
-			<?php  
-
-				$categories = get_categories( array(
-				    'orderby' => 'name',
-				    'parent'  => 0
-				) );
-				 
-				foreach ( $categories as $category ) {
-					if ( $slug_current == $category->slug ) {
-						$is_active = ' active';
-					} else {
-						$is_active = '';
-					}
-				    printf( '<li class="' .  $category->slug . $is_active . '"><a href="%1$s"><h5>%2$s</h5></a></li>',
-				        esc_url( get_category_link( $category->term_id ) ),
-				        esc_html( $category->name )
-				    );
-				}
-
-			 ?>
-		</ul>
-	</div> -->
+	
 <article class="page-blog">
 	<section class="blog padding-bottom">
 		<header class="blog__header">
-			<h2 class="blog__header-title">Últimas Postagens</h2>
+			<h2 class="blog__header-title">RASULTADO DA BUSCA</h2>
 		</header>
 		<div class="container">
 			
+			
 			<ul class="blog__news">
 				
-  				<?php
-			        $post_type_custom = 'post';
-		          	if( is_tax() ) {
-		            	$tax_slug =  'categoria';
-		            	$args = array( 'post_type' => $post_type_custom, 'posts_per_page' => 20, 'oder_by' => 'date', 'order' => 'DESC', 'tax_query' => 
-		            	array(  array( 'taxonomy'  => $tax_slug, 'field' => 'slug','terms' => get_queried_object()->slug,),), );
-		          	}elseif( is_home() || is_front_page() ) {
-		            	$args = array( 'post_type' => $post_type_custom, 'posts_per_page' => 20, 'oder_by' => 'date', 'order' => 'DESC' );
-		          	}elseif( is_single() ) {
-		            	$args = array( 'post_type' => $post_type_custom, 'posts_per_page' => 20, 'oder_by' => 'date', 'order' => 'DESC', 'post__not_in' => array( $post->ID ) );
-		          	} elseif( is_search() ) {
-		            	$args = array( 'post_type' => $post_type_custom, 's' => $_GET['s'], 'oder_by' => 'date', 'posts_per_page' => 20, 'order' => 'DESC' );
-		          	} else {
-		            	$args = array( 'post_type' => $post_type_custom, 'posts_per_page' => 20, 'oder_by' => 'date', 'order' => 'DESC' );
-		          	}     
-			        	$loop = new WP_Query( $args );
-			          while ( $loop->have_posts() ) : $loop->the_post();
-			            $slug = basename(get_permalink());
-			            $classItem = $slug;
-				?> 
+  			<?php
+			if ( have_posts() ) {
+
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+
+			?>
+
 		      	<li class="">
 			        <table cellspacing="0" cellpadding="0" width="100%" border="0">
 						<thead>
@@ -109,15 +75,20 @@ if ( has_post_thumbnail() ) {
 						</tbody>
 			        </table>
 		      	</li>          
-          		<?php endwhile; ?>     
+          		<?php endwhile; ?> 
+          		<?php } else { ?>
+          			<li class="no-posts padding-horizontal padding-vertical align-center">
+          				<h3>Não há nenhum artigo dentro deste período.</h3>
+          			</li>
+          		<?php } ?>     
     		</ul>
 			<div class="blog__sidebar">
 				<div class="search">
 					<header>
 						<h4 class="title">PESQUISAR</h4>
 					</header>
-					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url() ); ?>">
-						<!-- <input type="hidden" name="post_type" value="post"> -->
+					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<input type="hidden" name="post_type" value="post">
 						<label class="labelForm" for="s">O QUE VOCÊ ESTÁ BUSCANDO?</label>
 						<input class="keyword" type="search" name="s" placeholder="DIGITE A SUA PESQUISA">
 						<input class="submit" type="submit" value="" />

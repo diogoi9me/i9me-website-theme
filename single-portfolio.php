@@ -76,6 +76,7 @@
 			$sizeThumbs = 'full';
 			$urlThumbnail = wp_get_attachment_image_src($image_id, $sizeThumbs);
 			$urlThumbnail = $urlThumbnail[0];
+			$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 		} else {
 			$urlThumbnail	= '';
 		}
@@ -171,8 +172,8 @@
 					</div>
 					<?php } ?>
 			</div>
-			<div class="page-portfolio__simple-image">
-				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+			<div class="page-portfolio__simple-image <?php if( $estrutura == 'colls-full' ) { echo 'full'; } ?>">
+				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 			</div>
 		</section>
 
@@ -186,7 +187,7 @@
 					</header>
 				</div>
 				<div class="page-portfolio__simple-image">
-					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 				</div>
 		</section>
 

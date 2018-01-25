@@ -10482,12 +10482,12 @@ INTRO
 }
 
 .intro-captions__separator{
-	text-align: center;
+    text-align: center;
 }
 
 
 .intro-captions__separator__element{
-	position: relative;
+    position: relative;
     display: inline-block;
     color: #FFF;
     font-size: 16px;
@@ -10514,12 +10514,12 @@ INTRO
 
 
 .intro-captions__separator__element:before{
-	left: -70px;
+    left: -70px;
     
 }
 
 .intro-captions__separator__element:after{
-	right: -70px;
+    right: -70px;
     
 }
 
@@ -10573,8 +10573,8 @@ Responsive - TABLET
 
 
 .intro-captions__separator__element{
-	position: absolute;
-	display: block;
+    position: absolute;
+    display: block;
     top: 20px;
     width: 100%;
     height: 45px;
@@ -17956,15 +17956,15 @@ Responsive - PC
 }
 
 .cta-button{
-	position: relative;
-	display: inline-block;
-	width: auto;
-	height: auto;
-	padding: 15px 30px;
-	border: 2px solid #FFF;
-	color: #FFF;
-	font-size: 20px;
-	font-weight: bold;
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 15px 30px;
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 
@@ -18314,14 +18314,14 @@ Responsive - PC
 
 
 .cta-button{
-	padding: 15px 50px;
-	border: 2px solid #FFF;
-	font-size: 30px;
+    padding: 15px 50px;
+    border: 2px solid #FFF;
+    font-size: 30px;
 }
 
 .cta-button:hover{
-	background: #FFF;
-	color: #005193;
+    background: #FFF;
+    color: #005193;
 }
 
     .clientes__carousel .owl-controls {

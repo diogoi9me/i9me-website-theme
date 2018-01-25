@@ -13,7 +13,7 @@
 		if ( $miniatura ) {
 			//Imagem Destacada	
 			$urlThumbnail = $miniatura;
-			$bg_banner_single = 'style="background:url(' . $urlThumbnail . '); background-size: cover;"';
+			$bg_banner_single = 'style="background:url(' . $urlThumbnail . ') #005290; background-size: cover;"';
 			} else {
 				$urlThumbnail	= '';
 				$bg_banner_single = '';
@@ -104,6 +104,11 @@ $childargs = array(
     $estrutura = get_post_custom_values('wpcf-block-structure');
     $estrutura = $estrutura[0];
 
+    $url_link = get_post_custom_values('wpcf-url');
+    $url_link = $url_link[0];
+    $url_title = get_post_custom_values('wpcf-url-title');
+    $url_title = $url_title[0];
+
      if ( has_post_thumbnail() ) {
 			
 			//Imagem Destacada	
@@ -190,9 +195,32 @@ $childargs = array(
 
 	 ?>
 
-<section style="background: url('<?php echo $urlThumbnail; ?>'); background-size: cover;" class="criacao__paralax <?php echo $class_section; ?>">
+<section style="background: url('<?php echo $urlThumbnail; ?>') #005193; background-size: cover;" class="criacao__paralax <?php echo $class_section; ?>">
 
 	<p><?php echo get_the_content(); ?></p>
+
+</section>
+
+<?php } elseif ( $tipo == 'cta' ) { ?>
+
+	<?php 
+		if ( has_post_thumbnail() ) {
+				//Imagem Destacada	
+				$image_id = get_post_thumbnail_id();
+				$sizeThumbs = 'medium';
+				$urlThumbnail = wp_get_attachment_image_src($image_id, $sizeThumbs);
+				$urlThumbnail = $urlThumbnail[0];
+				} else {
+					$urlThumbnail	= '';
+				}
+
+
+	 ?>
+
+<section style="background: url('<?php echo $urlThumbnail; ?>') #005193; background-size: cover;" class="criacao__paralax padding-vertical <?php echo $class_section; ?>">
+
+	<p><?php echo get_the_content(); ?></p>
+	<a class="cta-button" href="<?php echo $url_link; ?>"><?php echo $url_title; ?></a>
 
 </section>
 
@@ -355,13 +383,6 @@ $childargs = array(
 	
 
 </div>
-	<div class="criacao__bottom-paralax">
-		<div class="criacao__bottom-texto">
-			<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt.</p>
-		</div>
-		<div class="criacao__bottom-lapis"></div>
-	</div>
 
 </article>
 

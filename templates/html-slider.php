@@ -1,8 +1,18 @@
 <section class="banner">
 
+    
+    <?php if ( wp_is_mobile() ) { ?>
+    
+    <div class="banner__video--mobile"></div>
+    
+    <?php } else { ?>
+
     <video autoplay loop id="video-background" class="banner__video" poster="" muted>
-      <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/webdesign.mp4" type="video/mp4" height="100%" width="100%">
+      <source class="video-background__src" src="<?php echo get_template_directory_uri(); ?>/assets/videos/webdesign.mp4" type="video/mp4" height="100%" width="100%">
     </video>
+    
+    <?php } ?>
+
     <div class="intro">
       <div class="intro-captions">
         <div class="intro-captions__container">
@@ -12,7 +22,7 @@
               <span class="caption__title__secundary">DESENVOLVIMENTO</span>
             </h2>
             <h3 class="caption__subtitle">
-              E-commerce <span class="caption__subtitle__subtitle__separator">//</span> Website <span class="caption__subtitle__subtitle__separator">//</span> Landing page
+              E-commerce <span class="caption__subtitle__subtitle__separator">//</span> Website <span class="caption__subtitle__subtitle__separator">//</span> Landing Page
             </h3>
           </div>
           <div class="intro-captions__separator">
@@ -30,7 +40,7 @@
         </div>
       </div>
   </div>
-    <<!-- div class="banner__layer">
+    <!-- div class="banner__layer">
       <div class="container">
         <div class="banner__info">
  

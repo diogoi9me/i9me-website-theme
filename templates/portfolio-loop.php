@@ -2,7 +2,7 @@
 	if( is_home() || is_front_page() ) {
 
 		$limit_res = '4';
-		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'ASC' );
+		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'DESC' );
 	
 	} elseif( is_single() && get_post_type() == 'cliente'  ) {
 	
@@ -34,12 +34,14 @@
 
 		$limit_res = '10';
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'ASC', 'paged' => $paged );
+		$args = array( 'post_type' => 'portfolio', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'DESC', 'paged' => $paged );
 	
 	}
 
 ?>
-	<ul class="item" id="portfolio">
+
+
+	<ul id="<?php if ( wp_is_mobile() && is_home() || wp_is_mobile() && is_front_page() ) { echo 'portfolio-owl'; } else { echo 'portfolio--container'; }  ?>">
 		<?php $loop = new WP_Query( $args );
 			$contador = 1; //Iniciado em um para exibir um na primeira iteração
 			while ( $loop->have_posts() ) : $loop->the_post();
@@ -52,6 +54,7 @@
 				$sizeThumbs = 'medium';
 				$urlThumbnail = wp_get_attachment_image_src($image_id, $sizeThumbs);
 				$urlThumbnail = $urlThumbnail[0];
+				$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 				} else {
 					$urlThumbnail	= '';
 				}
@@ -67,10 +70,10 @@
 		$service_post = get_post( $service_id );
 
 		?>
-        <li class="groupboxes__boxitem">
+        <li class="groupboxes__boxitem item">
         	<a href="<?php echo get_permalink(); ?>">
 				<figure class="groupboxes__hover <?php if( $contador % 2 == 0 ) { echo 'color-b'; } ?>">
-					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
+					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 						<figcaption class="groupboxes__legend">
 							<div class="groupboxes__border <?php if( $contador % 2 == 0 ) { echo 'groupboxes__border--right'; } ?>">
 								<h5 class="groupboxes__title"><?php echo $service_post->post_title; ?></h5>

@@ -14,7 +14,7 @@
 	?>
 	<div class="banner-single" <?php echo $bg_banner_single; ?>>
 		<header class="banner-single__header">
-			<h4 class="title-blog">BLOG</h4>
+			<!-- <h4 class="title-blog">BLOG</h4> -->
 			<?php 	
 				if ( have_posts() ) : 	
 					while ( have_posts() ) : the_post();
@@ -36,8 +36,13 @@
 			?>
 		</header>
 	</div>
+	<div class="breadcrumb">
+		<div class="container">
+			<?php get_template_part('breadcrumb');?>
+		</div>
+	</div>
 	<article class="page-blog-post">
-		<section class="blog">
+		<section class="blog padding-bottom">
 			<div class="container">
 				<ul class="blog__news">
 	    				<?php
@@ -125,8 +130,8 @@
 					<header>
 						<h4 class="title">PESQUISAR</h4>
 					</header>
-					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="hidden" name="post_type" value="post">
+					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url() ); ?>">
+						<!-- <input type="hidden" name="post_type" value="post"> -->
 						<label class="labelForm" for="s">O QUE VOCÊ ESTÁ BUSCANDO?</label>
 						<input class="keyword" type="search" name="s" placeholder="DIGITE A SUA PESQUISA">
 						<input class="submit" type="submit" value="" />

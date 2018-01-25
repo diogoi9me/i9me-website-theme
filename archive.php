@@ -6,99 +6,113 @@ $resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
 $resumoSection = $resumoSection[0];
  ?>
 
-<article class="page-servico">
-	<div class="banner-single">
+<?php 
+
+if ( has_post_thumbnail() ) {
+			
+			//Imagem Destacada	
+			$image_id = get_post_thumbnail_id();
+			$sizeThumbs = 'full';
+			$urlThumbnail = wp_get_attachment_image_src($image_id, $sizeThumbs);
+			$urlThumbnail = $urlThumbnail[0];
+
+			$bg_banner_single = 'style="background:url(' . $urlThumbnail . '); background-size: cover;"';
+
+			} else {
+						$urlThumbnail	= '';
+						$bg_banner_single = '';
+			}
+
+?>
+	<div class="banner-single" <?php // echo $bg_banner_single; ?>>
 		<header class="banner-single__header">
-			<h4>BLOG / ARQUIVO:</h4>
-			<h2 class="banner-single__title"><?php the_archive_title(); ?></h2>
+			<!-- <h4>BLOG / ARQUIVO:</h4> -->
+			<h2 class="banner-single__title"><?php echo the_archive_title(); ?></h2>
 			<p class="banner-single__subtitle"><?php echo $resumoSection; ?></p>
 		</header>
 	</div>
+	
 
-	<div class="criacao__lista-servicos">
-			<ul class="criacao__lista">
-				<?php 
-					$categories = get_categories( array(
-					    'orderby' => 'name',
-					    'parent'  => 0
-					) );
-					 
-					foreach ( $categories as $category ) {
-						if ( $slug_current == $category->slug ) {
-							$is_active = ' active';
-						} else {
-							$is_active = '';
-						}
-					    printf( '<li class="' .  $category->slug . $is_active . '"><a href="%1$s"><h5>%2$s</h5></a></li>',
-					        esc_url( get_category_link( $category->term_id ) ),
-					        esc_html( $category->name )
-					    );
-					}
-				?>
-			</ul>
+	<div class="breadcrumb">
+		<div class="container">
+			<?php get_template_part('breadcrumb');?>
 		</div>
-		<section class="criacao">
-			<div class="container">
-				<ul class="">
-    				<?php
-					if ( have_posts() ) :
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
-					?>
-			    	<li class="">    
-			        	<table cellspacing="0" cellpadding="0" width="100%" border="0">
-							<thead>
-								<tr>
-									<td class="date"><?php the_date('d/m'); ?></td>
-									<td class="">
+	</div>
+	
+<article class="page-blog">
+	<section class="blog padding-bottom">
+		<header class="blog__header">
+			<h2 class="blog__header-title">Artigos no Período</h2>
+		</header>
+		<div class="container">
+			
+			<ul class="blog__news">
+				
+  			<?php
+			if ( have_posts() ) {
+
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+
+			?>
+
+		      	<li class="">
+			        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+						<thead>
+							<tr>
+								<td class="date"><?php the_date('d/m'); ?></td>
+								<td class="titlePost ">
 									<h5 class="title"><a href="<?php echo get_permalink(); ?>"><?php echo the_title(); ?></a></h5>
-									</td>
-									<td class="comments"><span><?php comments_number( '0', '1', '%' ); ?></span></td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td colspan="3" class=""><?php echo get_the_content(); ?></td>
-								</tr>
-							</tbody>
-			        	</table>
-			    	</li>
-			    	<?php endwhile; ?>
-				<?php endif; ?> 
+								</td>
+								<td class="comments"><span><?php comments_number( '0', '1', '%' ); ?></span></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="3" class=""><?php echo get_the_content(); ?></td>
+							</tr>
+						</tbody>
+			        </table>
+		      	</li>          
+          		<?php endwhile; ?> 
+          		<?php } else { ?>
+          			<li class="no-posts padding-horizontal padding-vertical align-center">
+          				<h3>Não há nenhum artigo dentro deste período.</h3>
+          			</li>
+          		<?php } ?>     
     		</ul>
-			<div class="sidebar">
-				<div class="search ">
+			<div class="blog__sidebar">
+				<div class="search">
 					<header>
 						<h4 class="title">PESQUISAR</h4>
 					</header>
-					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<input type="hidden" name="post_type" value="post">
+					<form role="search" method="get" id="form_pesquisa" class="form_pesquisa_mobile" action="<?php echo esc_url( home_url() ); ?>">
+						<!-- <input type="hidden" name="post_type" value="post"> -->
 						<label class="labelForm" for="s">O QUE VOCÊ ESTÁ BUSCANDO?</label>
 						<input class="keyword" type="search" name="s" placeholder="DIGITE A SUA PESQUISA">
 						<input class="submit" type="submit" value="" />
-					</form>
+					</form>		
 				</div>
-				<div class="category ">
+				<div class="category">
 					<header>
 						<h4 class="title">CATEGORIAS</h4>
 					</header>
 					<ul>
 						<?php 
 							$categories = get_categories( array(
-					    		'orderby' => 'name',
-					    		'parent'  => 0
+							    'orderby' => 'name',
+							    'parent'  => 0
 							) );
-					 
 							foreach ( $categories as $category ) {
-					    	printf( '<li><a href="%1$s">%2$s</a></li>',
-					        esc_url( get_category_link( $category->term_id ) ),
-					        esc_html( $category->name )
-					    		);
+							    printf( '<li><a href="%1$s">%2$s</a></li>',
+							        esc_url( get_category_link( $category->term_id ) ),
+							        esc_html( $category->name )
+							    );
 							}
-				 		?>
-					</ul>
+						?>
+					</ul>		
 				</div>
-				<div class="archive ">
+				<div class="archive">
 					<header>
 						<h4 class="title">ARQUIVOS</h4>
 					</header>
@@ -106,7 +120,7 @@ $resumoSection = $resumoSection[0];
 						<?php wp_get_archives( array( 'type' => 'monthly', 'limit' => 12 ) ); ?>
 					</ul>
 				</div>
-				<div class="comments ">
+				<div class="comments">
 					<header>
 						<h4 class="title">COMENTÁRIOS</h4>
 					</header>
@@ -116,13 +130,13 @@ $resumoSection = $resumoSection[0];
 							//'status' => 'hold',
 							'number' => '5',
 							//'post_id' => 1, // use post_id, not post_ID
-						);
-						$comments = get_comments($args);
-						foreach($comments as $comment) :
+							);
+							$comments = get_comments($args);
+							foreach($comments as $comment) :
 							echo($comment->comment_author . '<br />' . $comment->comment_content);
-						endforeach;
+							endforeach;
 						?>
-					</ul>
+					</ul>			
 				</div>
 			</div>
 		</div>

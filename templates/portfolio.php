@@ -4,11 +4,11 @@
 	$resumoSection = $resumoSection[0];
  ?>
 <section class="portfolio" id="portfolio">
-	<header class="header-section">
+	<header class="header-section padding-vertical">
 		<div class="header-section__box">
-			<h2 class="header-section__title wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0s"><span>Portfólio</span></h2>
+			<h2 <?php if ( wp_is_mobile() ) { echo 'class="header-section__title"'; } else { echo 'class="header-section__title wow_fadeInUp" data-wow-duration="0.35s" data-wow-delay="0s"'; } ?>><span>Portfólio</span></h2>
 		</div>
-		<p class="header-section__subtitle wow fadeInUp"  data-wow-duration="0.8s" data-wow-delay="0.99s">
+		<p <?php if ( wp_is_mobile() ) { echo 'class="header-section__subtitle"'; } else { echo 'class="header-section__subtitle wow fadeInUp" data-wow-duration="0.35s" data-wow-delay="0.25s"'; } ?>>
 			<?php echo $resumoSection; ?>	 	
 		</p>
 	</header>

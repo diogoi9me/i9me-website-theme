@@ -31,7 +31,7 @@
 
         <?php
 
-          if( is_home() || is_front_page() ) {
+          if( is_home() && !wp_is_mobile() || is_front_page() && !wp_is_mobile() ) {
             
             $nameNav = 'scroll-nav'; 
 

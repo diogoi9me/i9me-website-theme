@@ -6,7 +6,7 @@
 		
 	} else {
 
-		$limit_res = '40';
+		$limit_res = '8';
 
 	}
 
