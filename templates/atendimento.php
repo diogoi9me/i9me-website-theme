@@ -1,3 +1,8 @@
+<?php 
+	$page = get_page_by_path('atendimento');
+	$resumoSection = get_post_custom_values('wpcf-resume', $page->ID);
+	$resumoSection = $resumoSection[0];
+ ?>
 <section class="atendimento padding-bottom" id="atendimento">
 	<div class="container">
 		<header class="header-section padding-vertical">
@@ -6,7 +11,7 @@
 			</div>
 			
 			<p <?php if ( wp_is_mobile() ) { echo 'class="header-section__subtitle header-section__subtitle--textwhite"'; } else { echo 'class="header-section__subtitle header-section__subtitle--textwhite wow fadeInUp" data-wow-duration="0.35s" data-wow-delay="0.25s"'; } ?>>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolorum sequi voluptatem reprehenderit. 		
+				<?php echo $resumoSection; ?>		
 			</p>
 		</header>
 

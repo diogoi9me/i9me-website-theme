@@ -111,7 +111,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 				<h2>Web</h2>
 				<p class="subtitle-servicos">
 				<?php 
-					echo $term_design->description;
+					echo $term_web->description;
 				 ?>
 				</p>
 			</header>
@@ -165,7 +165,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<div class="bloco-title bloco-title--right">
 			        		<h2 class="title-web  ">WEB</h2>
 							<p class="subtitle-web">
-								<?php echo $term_design->description; ?>
+								<?php echo $term_web->description; ?>
 							</p>
 						</div>
 						<div class="header-section__box header-section__box--design">
