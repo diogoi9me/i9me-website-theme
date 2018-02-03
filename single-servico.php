@@ -172,7 +172,7 @@ $childargs = array(
 					</figure>
 					<figcaption>
 						<h2><?php echo the_title(); ?></h2>
-						<p><?php echo get_the_content(); ?></p>
+						<p><?php echo the_content(); ?></p>
 					</figcaption>
 				</div>
 			</div>
@@ -197,7 +197,7 @@ $childargs = array(
 
 <section style="background: url('<?php echo $urlThumbnail; ?>') #005193; background-size: cover;" class="criacao__paralax <?php echo $class_section; ?>">
 
-	<p><?php echo get_the_content(); ?></p>
+	<p><?php echo the_content(); ?></p>
 
 </section>
 
@@ -217,10 +217,10 @@ $childargs = array(
 
 	 ?>
 
-<section style="background: url('<?php echo $urlThumbnail; ?>') #005193; background-size: cover;" class="criacao__paralax padding-vertical <?php echo $class_section; ?>">
+<section style="background: url('<?php echo $urlThumbnail; ?>') #005193; background-size: cover;" class="criacao__paralax padding-vertical <?php echo $class_section; ?> padding-horizontal">
 
-	<p><?php echo get_the_content(); ?></p>
-	<a class="cta-button" href="<?php echo $url_link; ?>"><?php echo $url_title; ?></a>
+	<p><?php echo the_content(); ?></p>
+	<a class="cta-button animating u-boxShadow" href="<?php if ( $url_link != '') { echo $url_link; } else { echo get_home_url() . '/orcamento/';} ?>"><?php echo $url_title; ?></a>
 
 </section>
 
@@ -296,8 +296,7 @@ $childargs = array(
 			<div class="criacao__area-imagem criacao__area-imagem--fases">
 				<figcaption>
 					<h2><?php echo the_title(); ?></h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt<br/> ut labore et dolore magna aliqua.ipsum dolor sit amet, consectetur adipisicing elit, ipsum. </p>
+					<p><?php echo the_content(); ?></p>
 				</figcaption>
 				<figure>
 					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo get_the_title(); ?>">
@@ -308,7 +307,7 @@ $childargs = array(
 	<div class="criacao__lista-fase">
 		<div class="criacao__col">			
 			<figure class="criacao__img">
-				<img src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>">
+				<img class="imgBlock" src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				<div class="criacao__hover">
  					<img src="<?php echo $bloco1_icon; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				</div>
@@ -320,7 +319,7 @@ $childargs = array(
 		</div>
 		<div class="criacao__col criacao__col--right">
 			<figure class="criacao__img criacao__img--right">
-				<img src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>">
+				<img class="imgBlock" src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>">
 				<div class="criacao__hover">
  					<img src="<?php echo $bloco2_icon; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				</div>
@@ -332,7 +331,7 @@ $childargs = array(
 		</div>
 		<div class="criacao__col">			
 			<figure class="criacao__img">
-				<img src="<?php echo $bloco3_imagem; ?>" alt="<?php echo $bloco3_titulo; ?>">
+				<img class="imgBlock" src="<?php echo $bloco3_imagem; ?>" alt="<?php echo $bloco3_titulo; ?>">
  				<div class="criacao__hover">
  					<img src="<?php echo $bloco3_icon; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				</div>
@@ -344,7 +343,7 @@ $childargs = array(
 		</div>
 		<div class="criacao__col criacao__col--right">
 			<figure class="criacao__img criacao__img--right">
-				<img src="<?php echo $bloco4_imagem; ?>" alt="<?php echo $bloco4_titulo; ?>">
+				<img class="imgBlock" src="<?php echo $bloco4_imagem; ?>" alt="<?php echo $bloco4_titulo; ?>">
 				<div class="criacao__hover">
  					<img src="<?php echo $bloco4_icon; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				</div>
@@ -356,7 +355,7 @@ $childargs = array(
 		</div>
 		<div class="criacao__col">			
 			<figure class="criacao__img">
-				<img src="<?php echo $bloco5_imagem; ?>" alt="<?php echo $bloco5_titulo; ?>">
+				<img class="imgBlock" src="<?php echo $bloco5_imagem; ?>" alt="<?php echo $bloco5_titulo; ?>">
  				<div class="criacao__hover">
  					<img src="<?php echo $bloco5_icon; ?>" alt="<?php echo $bloco1_titulo; ?>">
  				</div>

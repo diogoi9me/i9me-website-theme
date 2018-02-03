@@ -54,8 +54,8 @@
                   <a href="https://www.instagram.com/i9mewebdesign/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
               </div>
               <div class="header__redesbottom">
-                  <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                  <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                  <a href="https://plus.google.com/b/100594699718366982709/100594699718366982709" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                  <a href="https://api.whatsapp.com/send?phone=5585998624149" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
               </div>
           </div>
       </div>

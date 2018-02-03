@@ -19,7 +19,7 @@
 				<?php get_template_part('templates/portfolio','loop');?>
 			</div>
 			<div class="groupboxes__vermais wow rotateIn">
-				<a href="<?php echo home_url() ?>/portfolios/" class="btn-plus">
+				<a href="<?php echo home_url() ?>/portfolio-i9me/" class="btn-plus">
 				</a>
 			</div>
 

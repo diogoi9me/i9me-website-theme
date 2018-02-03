@@ -1,6 +1,3 @@
-<article class="blog__conteudo">
-	<div class="container">
-	
 		<?php 
 			if( is_home() || is_front_page() ) {	
 				$limit_res = '2';
@@ -10,10 +7,8 @@
 			$args = array( 'post_type' => 'post', 'posts_per_page' => $limit_res, 'orderby' => 'date', 'order' => 'DESC' );
 		?>
 
-		<ul class="blog-boxe" id="<?php if ( wp_is_mobile() && is_home() || wp_is_mobile() && is_front_page() ) { echo 'blog-owl'; } else { echo 'blog--container'; }  ?>">
+		<ul class="Section-items u-displayFlex u-flexSwitch--desktop u-flexDirectionColumnShwitchRow u-sizeFull" id="<?php if ( wp_is_mobile() && is_home() || wp_is_mobile() && is_front_page() ) { echo 'blog-owl'; } else { echo 'blog--container'; }  ?>">
 			<?php $loop = new WP_Query( $args );
-				
-				$contador = 1; //Iniciado em um para exibir um na primeira iteração
 
 				while ( $loop->have_posts() ) : $loop->the_post();
 					
@@ -34,25 +29,22 @@
 					}
 
 		    ?>	
-		    <li class="blog-boxe__item">
-				<figure class="blog-boxe__figure">
-					<a href="<?php echo get_permalink(); ?>">
-					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
-						<figcaption class="blog-boxe__legend">
-							<div class="groupboxes__border groupboxes__border--blog <?php if( $contador % 2 == 0 ) { echo 'groupboxes__border--right groupboxes__border--blog-right'; } ?>">
-								<h5 class="groupboxes__title"><?php echo get_the_title(); ?></h5>
-									<span class="groupboxes__subtitle groupboxes__subtitle--blog"><?php echo get_the_excerpt(); ?></span>
-							</div>
+		    <li class="Section-items-item u-positionRelative">
+				<figure class="Section-items-item-figure">
+					<a class="Section-items-item-link animating" href="<?php echo get_permalink(); ?>">
+						<img class="Section-items-item-figure-imgSrc u-sizeObjectFitCover" src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
+						<figcaption class="Section-items-item-figcaption animating">
+							<h5 class="Section-items-item-title animating"><?php echo get_the_title(); ?></h5>
+							<?php if ( !wp_is_mobile() ) { 
+								echo '<p class="Section-items-item-resume animating">' . get_the_excerpt() . '</p>';
+							}
+							?>
 						</figcaption>
 					</a>
 				</figure>
 			</li>
-			<?php $contador += 1; //Incrementa o contador para a próxima iteração do loop ?>
 		    <?php endwhile; ?>
 		</ul>
 		<div class="groupboxes__vermais">
 			<a href="<?php echo home_url(); ?>/blog/" class="btn-plus"></a>
 		</div>	
-	</div>
-	
-</article>

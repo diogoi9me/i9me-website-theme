@@ -42,15 +42,15 @@
 	<section class="page-atendimento__talkme coll coll--coll-1x2 padding-horizontal">
 		<header class="header-subsection">
 			<i class="header-subsection__icon"></i>
-			<h2 class="header-subsection__title header-subsection__title--blue">FALE CONOSCO</h2>
-			<p class="header-subsection__resume">Deixe aqui a sua solicitação que nós retornaremos ao seu contato o mais breve possível.</p>
+			<h2 class="header-subsection__title header-subsection__title--blue">SOLICITE O SEU ORÇAMENTO</h2>
+			<p class="header-subsection__resume">Insira as informações solicitadas que lhe retornaremos o mais breve possível.</p>
 		</header>
 		<main class="main-subsection">
-			<?php 
-				echo do_shortcode('[contact-form-7 id="325" title="Page Atendimento" html_class="form-i9me"]'); 
-			?>
+			<?php get_template_part('templates/orcamento','form');?>
+			<!-- <div class="_form_1"></div><script src="https://i9me.activehosted.com/f/embed.php?id=1" type="text/javascript" charset="utf-8"></script> -->
+
 			<!--
-				<form class="form-i9me">
+			<form class="form-i9me">
 				 <fieldset class="main-section__colls colls colls--table-relative colls--spacing">
 					<p class="coll coll--coll-1x2 name">
 						<label for="your-name">NOME</label>
@@ -124,9 +124,6 @@
 			<h2>LOCALIZAÇÃO ESTÚDIO, ESCRITÓRIO DE DESIGN EM FORTALEZA / CE</h2>
 			<h3>IDENTIDADE VISUAL, LOGOTIPO E DESIGN GRÁFICO.</h3>
 		</header>
-		<main class="main-subsection">
-				<iframe class="localizacao__iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.09995194693!2d-38.490588385620505!3d-3.7884171445405173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74f616e77fe93%3A0x2fa56ee94a69b0ea!2sI9ME+Web+%26+Design!5e0!3m2!1spt-BR!2sbr!4v1508249512584" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</main>
 	</section>
 
 	<section class="horarios">

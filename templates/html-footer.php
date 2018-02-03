@@ -25,6 +25,7 @@
 						<li class="footer__fones"><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i> <strong>(85)99862-4149</strong></a></li>
 						<li><a href="<?php echo get_home_url(); ?>/atendimento">Atendimento</a></li>
 						<li><a href="<?php echo get_home_url(); ?>/blog">Blog</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/portfolio-i9me/">Portfólio</a></li>
 						
 				</ul>
 				<div class="footer__bloco footer__bloco--iframe">
@@ -50,6 +51,7 @@
 			        </a>
 			     </div>
 				<div class="footer__copyright">
+					<span>I9ME Web & Design. Agência Digital | Design UI/UX, Web e Gráfico em Fortaleza-CE.</span><br />
 					<span>Copyright © 2017 <strong>I9ME Web & Design.</strong> Todos os direitos reservados.</span>
 				</div>
 			</div>

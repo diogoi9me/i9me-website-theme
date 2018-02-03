@@ -91,7 +91,7 @@
 			<div class="controls">
 	        	
 	            <?php echo get_previous_posts_link( '' ); ?>
-	            <a href="<?php echo home_url(); ?>/portfolios/" class="controls__center"></a>
+	            <a href="<?php echo home_url(); ?>/portfolio-i9me/" class="controls__center"></a>
 	            <?php echo get_next_posts_link( '', $loop->max_num_pages ); ?>
 	        	
 	        </div>

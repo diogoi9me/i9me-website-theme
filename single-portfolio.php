@@ -82,7 +82,7 @@
 		}
  	?>
 	<?php 
-		if ( $tipo == 'grid' ) { 
+		if ( !wp_is_mobile() && $tipo == 'grid' ) { 
 		 	//bloco 01
 		    $bloco1_titulo = get_post_custom_values('wpcf-block-01-title');
 		    $bloco1_titulo = $bloco1_titulo[0];
@@ -132,47 +132,50 @@
 
 		<section class="page-portfolio__grid <?php echo $estilo; ?>" <?php echo $printColor; ?> >
 			
-			<div class="page-portfolio__grid--left">
-				<div class="grid-captions padding-vertical--inter">
-					<h4 class="grid-captions__title"><?php echo $bloco1_titulo; ?></h4>	
-					<h5 class="grid-captions__subtitle">
-						<a href="<?php echo $customer_link; ?>">Cliente: <strong class="grid-captions__subtitle--strong"><?php echo  $customer_post->post_title; ?></strong></a>
-					</h5>	
-					<p class="grid-captions__resume"><?php echo $bloco1_conteudo; ?></p>	
+			<div class="containerMaxCenter">
+				<div class="page-portfolio__grid--left">
+					<div class="grid-captions padding-vertical--inter">
+						<h4 class="grid-captions__title"><?php echo $bloco1_titulo; ?></h4>	
+						<h5 class="grid-captions__subtitle">
+							<a href="<?php echo $customer_link; ?>">Cliente: <strong class="grid-captions__subtitle--strong"><?php echo  $customer_post->post_title; ?></strong></a>
+						</h5>	
+						<p class="grid-captions__resume"><?php echo $bloco1_conteudo; ?></p>	
+					</div>
+					<img class="grid-image" src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>, <?php the_title() ?>">
 				</div>
-				<img class="grid-image" src="<?php echo $bloco1_imagem; ?>" alt="<?php echo $bloco1_titulo; ?>, <?php the_title() ?>">
-			</div>
 
-			<div class="page-portfolio__grid--right">
-				<div class="grid-captions padding-vertical--inter">
-					<h4 class="grid-captions__title"><?php echo $bloco2_titulo; ?></h4>	
-					<h5 class="grid-captions__subtitle">
-						<a href="<?php echo $customer_link; ?>">Serviço: <strong class="grid-captions__subtitle--strong"><?php echo  $service_post->post_title; ?></strong></a>
-					</h5>	
-					<p class="grid-captions__resume"><?php echo $bloco2_conteudo; ?></p>	
+				<div class="page-portfolio__grid--right">
+					<div class="grid-captions padding-vertical--inter">
+						<h4 class="grid-captions__title"><?php echo $bloco2_titulo; ?></h4>	
+						<h5 class="grid-captions__subtitle">
+							<a href="<?php echo $service_link; ?>">Serviço: <strong class="grid-captions__subtitle--strong"><?php echo  $service_post->post_title; ?></strong></a>
+						</h5>	
+						<p class="grid-captions__resume"><?php echo $bloco2_conteudo; ?></p>	
+					</div>
+					<img class="grid-image" src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>, <?php the_title() ?>">
 				</div>
-				<img class="grid-image" src="<?php echo $bloco2_imagem; ?>" alt="<?php echo $bloco2_titulo; ?>, <?php the_title() ?>">
 			</div>
 
 		</section>
+
 		
 		<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-full' ) { ?>
 		
 		<section class="page-portfolio__simple colls-full padding-top" <?php echo $printColor; ?> >
-			
-			<div class="page-portfolio__simple-captions padding-vertical--inter">
+			<div class="containerMaxCenter">
+				<div class="page-portfolio__simple-captions padding-vertical--inter">
 					<header class="simple-captions__header">
 						<h2 class="simple-captions__header-title"><?php echo the_title(); ?></h2>
-						<p  class="simple-captions__header-resume"><?php echo get_the_content(); ?></p>
+						<p  class="simple-captions__header-resume"><?php echo the_content(); ?></p>
 					</header>
-
 					<?php if ( $url_link ) { ?>
 					<div class="page-portfolio__header-btn">
-						<a href="<?php echo $url_link; ?>" target="_blank"><?php if ( $url_title ) { echo $url_title; } else { echo 'Acesse!'; } ?></a>
+						<a class="animating" href="<?php echo $url_link; ?>" target="_blank"><?php if ( $url_title ) { echo $url_title; } else { echo 'Acesse!'; } ?></a>
 					</div>
 					<?php } ?>
+				</div>
 			</div>
-			<div class="page-portfolio__simple-image <?php if( $estrutura == 'colls-full' ) { echo 'full'; } ?>">
+			<div class="page-portfolio__simple-image <?php if( $estrutura == 'colls-full' ) { echo 'full u-alignCenter'; } ?>">
 				<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 			</div>
 		</section>
@@ -180,15 +183,17 @@
 		<?php } elseif ( $tipo == 'simple' && $estrutura == 'colls-2x2' || $tipo == 'simple' && $estrutura == 'colls-1x3' || $tipo == 'simple' && $estrutura == 'colls-3x1' ) { ?>
 		
 		<section class="page-portfolio__simple <?php echo $estrutura; ?> padding-vertical padding-horizontal" <?php echo $printColor; ?> >
+			<div class="containerMaxCenter">
 				<div class="page-portfolio__simple-captions <?php if ( $estrutura == 'colls-3x1' || $estrutura == 'colls-2x2' ) { echo 'padding-right--inter'; } elseif( $estrutura == 'colls-1x3' ) { echo 'padding-left--inter'; } ?>">
 					<header class="simple-captions__header">
 						<h2 class="simple-captions__header-title"><?php echo the_title(); ?></h2>
-						<p  class="simple-captions__header-resume"><?php echo get_the_content(); ?></p>
+						<p  class="simple-captions__header-resume"><?php echo the_content(); ?></p>
 					</header>
 				</div>
 				<div class="page-portfolio__simple-image">
 					<img src="<?php echo $urlThumbnail; ?>" alt="<?php echo $alt; ?>">
 				</div>
+			</div>
 		</section>
 
 	<?php } ?>
@@ -203,7 +208,7 @@
 			<?php previous_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>
 		</a>
 		
-		<a href="<?php echo home_url(); ?>/portfolios/" class="controls__center"></a>
+		<a href="<?php echo home_url(); ?>/portfolio-i9me/" class="controls__center"></a>
 		
 		<a class="controls__right">
 			<?php next_post_link(   '%link', '', $in_same_term = true, $excluded_terms = '', $taxonomy = 'tipo-de-servico' ); ?>

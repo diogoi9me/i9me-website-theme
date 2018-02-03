@@ -13,7 +13,7 @@
 			}
 	?>
 	<div class="banner-single" <?php echo $bg_banner_single; ?>>
-		<header class="banner-single__header">
+		<header class="banner-single__header padding-vertical">
 			<!-- <h4 class="title-blog">BLOG</h4> -->
 			<?php 	
 				if ( have_posts() ) : 	
@@ -64,6 +64,15 @@
 							<tbody>
 								<tr>
 									<td colspan="3" class="blog__conteudo"><?php echo the_content(); ?></td>
+								</tr>
+								<tr>
+									<td>
+										<section style="background: url('http://www.i9me.com.br/wp-content/uploads/2017/09/orcamento-agencia-digital-fortaleza-webdesign-2-800x307.png') #005193; background-size: cover;" class="criacao__paralax padding-vertical e-commerce padding-horizontal">
+
+											<p>SOLICITE UM <strong>ORÇAMENTO</strong> AGORA!</p>
+											<a class="cta-button animating u-boxShadow" href="http://www.i9me.com.br/orcamento/">PEÇA UM ORÇAMENTO</a>
+										</section>
+									</td>
 								</tr>
 							</tbody>
 							<tfoot>

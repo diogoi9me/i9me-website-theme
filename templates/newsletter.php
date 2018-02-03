@@ -14,9 +14,8 @@
 				
 				<a href="https://www.facebook.com/i9mewebdesign/" target="_blank" class="fa fa-facebook" aria-hidden="true"></a>
 	            <a href="https://www.instagram.com/i9mewebdesign/" target="_blank" class="fa fa-instagram" aria-hidden="true"></a>
-	            <a href="#" class="fa fa-google-plus" aria-hidden="true"></a>
-	            <a href="#" class="fa fa-behance" aria-hidden="true"></a>
-			
+	            <a href="https://plus.google.com/b/100594699718366982709/100594699718366982709" target="_blank" class="fa fa-google-plus" aria-hidden="true"></a>
+	            <a href="https://api.whatsapp.com/send?phone=5585998624149" target="_blank" class="fa fa-whatsapp" aria-hidden="true"></a>			
 			</div>
 		</div>
 	</div>

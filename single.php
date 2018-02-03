@@ -9,7 +9,7 @@
 
 <?php if ( get_post_type() == 'post'): ?>
                 <div class="header header--interna">
-                    <h2 class="header__titulo header__titulo--interna">
+                    <h2 class="header__titulo header__titulo--interna padding-vertical">
                         <?php the_title();?>
                     </h2>
                 </div>

@@ -76,7 +76,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<li class="lista__item">
 							<figure>
 								<a href="<?php echo get_permalink(); ?>">
-									<div class="lista__bordas wow zoomIn" data-wow-duration="0.25" data-wow-delay="0">
+									<div <?php if ( wp_is_mobile() ) { echo 'class="lista__bordas"'; } else { echo 'class="lista__bordas wow zoomIn" data-wow-duration="0.25" data-wow-delay="0"'; } ?>>
 											<i class="servicos__<?php echo $slug; ?>">
 												<img class="icon" src="<?php echo $icone; ?>" alt="<?php echo the_title(); ?>" />
 												<img class="icon-hover" src="<?php echo $icone_hover; ?>" alt="<?php echo the_title(); ?>" />
@@ -139,7 +139,7 @@ $term_web = get_term_by('name', 'web', 'tipo-de-servico');
 						<li class="lista__item">
 							<figure>
 								<a href="<?php echo get_permalink(); ?>">
-									<div class="lista__bordas lista__bordas--white wow zoomIn" data-wow-duration="0.25" data-wow-delay="0">
+									<div <?php if ( wp_is_mobile() ) { echo 'class="lista__bordas"'; } else { echo 'class="lista__bordas wow zoomIn" data-wow-duration="0.25" data-wow-delay="0"'; } ?>>
 											<i class="lista__<?php echo $slug; ?>">
 												<img class="icon" src="<?php echo $icone; ?>" alt="<?php echo the_title(); ?>" />
 												<img class="icon-hover" src="<?php echo $icone_hover; ?>" alt="<?php echo the_title(); ?>" />

@@ -291,6 +291,10 @@ Espaçamentos
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.padding-horizontal--inter{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .padding-bottom{
     padding-bottom: 30px;
 }
@@ -324,7 +328,15 @@ Espaçamentos
 }
 
 
-
+.animating{
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.u-boxShadow{
+    box-shadow: 0px 0px 20px -2.5px rgba(0,0,0,0.5);
+}
 /**
 FIM - Padrões
 **/
@@ -10378,9 +10390,9 @@ INTRO
     display: block;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 61, 110, 0.8);
-    /* background: rgba(0,24,77,.75); */
-    /* background: rgba(64,128,255, 0.85); */
+    /* background: rgba(0, 61, 110, 0.9); */
+    background: rgba(0,24,77,.9);
+    /* background: rgba(64,128,255, 0.9); */
     top: 0;
     left: 0;
 }
@@ -10482,12 +10494,12 @@ INTRO
 }
 
 .intro-captions__separator{
-    text-align: center;
+	text-align: center;
 }
 
 
 .intro-captions__separator__element{
-    position: relative;
+	position: relative;
     display: inline-block;
     color: #FFF;
     font-size: 16px;
@@ -10514,12 +10526,12 @@ INTRO
 
 
 .intro-captions__separator__element:before{
-    left: -70px;
+	left: -70px;
     
 }
 
 .intro-captions__separator__element:after{
-    right: -70px;
+	right: -70px;
     
 }
 
@@ -10573,8 +10585,8 @@ Responsive - TABLET
 
 
 .intro-captions__separator__element{
-    position: absolute;
-    display: block;
+	position: absolute;
+	display: block;
     top: 20px;
     width: 100%;
     height: 45px;
@@ -10772,6 +10784,10 @@ Espaçamentos
     padding-top: 60px;
     padding-bottom: 60px;
 }
+.padding-horizontal--inter{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 .padding-bottom{
     padding-bottom: 60px;
 }
@@ -10864,6 +10880,10 @@ Espaçamentos PC
 .padding-horizontal{
     padding-top: 90px !important;
     padding-bottom: 90px !important;
+}
+.padding-horizontal--inter{
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .padding-bottom{
     padding-bottom: 90px !important;
@@ -13301,7 +13321,7 @@ body:not(.page) .servicos__web:before {
 .subtitle-design,
 .subtitle-web {
     margin: 0;
-    letter-spacing: 3px;
+    letter-spacing: 1.5px;
     color: #000;
     max-width: 350px;
     font-weight: 500;
@@ -15502,9 +15522,9 @@ section.blog .header-section__title:before {
 }
 
 .subtitle-servicos {
-    letter-spacing: 3px;
+    letter-spacing: 1.5px;
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 0px;
 }
 
@@ -16371,13 +16391,11 @@ section.blog .header-section__title:before {
         font-size: 20px !important;
         letter-spacing: 2px !important;
     }
-    .lista__smallcontent{
-        font-size: 14px !important;
-    }
+   
 
     .subtitle-design, .subtitle-web{
         font-size: 15px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
     }
     .header-section__box--design{
         width: 35% !important;
@@ -16481,15 +16499,17 @@ section.blog .header-section__title:before {
 }
 
 .lista__smallcontent {
-    font: 300 .9375rem Rajdhani, Arial, helvetica, sans-serif;
+   font-size: 14px;
     margin: 0;
     letter-spacing: .75px;
-    display: none
+    display: none;
+    color: #444444;
 }
 
 @media only screen and (min-width:767px) {
     .lista__smallcontent {
-        display: block
+        display: block;
+        font-size: 16px;
     }
     .lista__smalltitle {
     margin: 0 0 15px 0px;
@@ -16511,7 +16531,7 @@ section.blog .header-section__title:before {
     margin-left: 0;
     margin-right: 0;
     background-color: #005290;
-    background-position: top right !important; 
+    background-position: top center !important; 
     position: relative;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -16570,7 +16590,7 @@ section.blog .header-section__title:before {
 
 .banner-single__title:after {
     content: "";
-    border-bottom: 5px solid #054c7f;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.35);
     width: 100%;
     display: block;
     max-width: 60px;
@@ -16585,12 +16605,14 @@ section.blog .header-section__title:before {
     margin: 0 auto;
     font-size: 16px;
     margin-bottom: 30px;
-    display: none
+    display: none;
+    letter-spacing: 0.75px;
 }
 
 @media only screen and (min-width:767px) {
     .banner-single__subtitle {
-        display: block
+        display: block;
+        font-size: 18px;
     }
 }
 
@@ -16869,14 +16891,9 @@ Responsive - SMARTPHONE
 .page-portfolio__simple-image{
     position: relative;
     display: block;
-    line-height: 0px;
 }
 .page-portfolio__simple-image img{
     max-width: 100%;
-}
-
-.page-portfolio__simple-image.full img{
-    min-width: 100%;
 }
 
 
@@ -17677,7 +17694,7 @@ Responsive - PC
 
 @media only screen and (min-width:767px) {
     .criacao__lista li h5 {
-        font-size: inherit
+        font-size: 16px;
     }
 }
 
@@ -17813,7 +17830,11 @@ Responsive - PC
     display: table;
     clear: both
 }
-
+.criacao__area-imagem figcaption h2 {
+        font-size: 30px;
+        color: #005193;
+        text-transform: uppercase
+    }
 @media only screen and (min-width:1023px) {
     .criacao__area-imagem figcaption {
         float: left;
@@ -17828,14 +17849,9 @@ Responsive - PC
         display: table;
         clear: both
     }
-    .criacao__area-imagem figcaption h2 {
-        font: 600 2.1875rem Rajdhani, Arial, helvetica, sans-serif;
-        color: #005193;
-        text-transform: uppercase
-    }
+    
     .criacao__area-imagem figcaption p {
-        font: 600 1.125rem Rajdhani, Arial, helvetica, sans-serif;
-        margin-top: 49px;
+        margin-top: 20px;
         margin-bottom: 0
     }
 }
@@ -17845,6 +17861,14 @@ Responsive - PC
 }
 
 @media only screen and (min-width:767px) {
+    .criacao__area-imagem figcaption h2 {
+        font-size: 35px;
+    }
+
+    .criacao__area-imagem figcaption{
+        font-size: 18px;
+    }
+
     .criacao__area-imagem--fases {
         text-align: right
     }
@@ -17930,23 +17954,24 @@ Responsive - PC
         text-transform: uppercase
     }
     .criacao__area-imagem--fases figcaption p {
-        font: 600 1.125rem Rajdhani, Arial, helvetica, sans-serif;
-        margin-top: 49px;
-        margin-bottom: 0
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 
 .criacao__paralax {
-    float: left;
+    display: flex;
+    flex-direction: column;
+    float: none;
     clear: none;
     text-align: inherit;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    background: url(../images/paralaxx.png) no-repeat;
-    padding-top: 25px;
-    padding-bottom: 25px;
     text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-color: #005193;
 }
 
 .criacao__paralax:after {
@@ -17956,36 +17981,33 @@ Responsive - PC
 }
 
 .cta-button{
-    position: relative;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: 15px 30px;
-    border: 2px solid #FFF;
-    color: #FFF;
-    font-size: 20px;
-    font-weight: bold;
+	position: relative;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	padding: 15px 30px;
+	border: 2px solid #22ede9;
+	color: #034880;
+	font-size: 20px;
+	font-weight: bold;
+    background: #22ede9;
+    border-radius: 5px;
+    margin-top: 20px; 
 }
 
 
-@media only screen and (min-width:1023px) {
-    .criacao__paralax {
-        padding: 50px 0
-    }
-}
 
 .criacao__paralax p {
     color: #fff;
     font-size: 25px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center
+    text-align: center;
+    margin: 0px;
 }
 
 
 @media only screen and (min-width:1023px) {
     .criacao__paralax p {
-        font: 500 2.5rem Rajdhani, Arial, helvetica, sans-serif
+        font-size: 35px;
     }
 }
 
@@ -18166,7 +18188,7 @@ Responsive - PC
 }
 
 .criacao__legenda p {
-    margin: 0
+    margin: 0;
 }
 
 @media only screen and (min-width:1023px) {
@@ -18191,6 +18213,9 @@ Responsive - PC
         -moz-box-align: stretch;
         -ms-flex-align: stretch;
         align-items: stretch
+    }
+    .criacao__legenda p {
+        text-align: justify;
     }
     .criacao__legenda:after {
         content: "";
@@ -18301,6 +18326,16 @@ Responsive - PC
 }
 
 @media only screen and (min-width:767px) {
+
+    .criacao__paralax{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .criacao__paralax p{
+        margin-right: 10%;
+        text-align: left; 
+        max-width: 600px;
+    }
     .clientes__carousel {
         margin-bottom: 60px
     }
@@ -18312,16 +18347,24 @@ Responsive - PC
 
 @media only screen and (min-width:767px) {
 
+.criacao__area-imagem--fases figcaption{
+    font-size: 18px;
+}
 
 .cta-button{
-    padding: 15px 50px;
-    border: 2px solid #FFF;
-    font-size: 30px;
+	padding: 15px;
+    margin-top: 0px;
+	font-size: 30px;
+    text-shadow: 1px 1px 0 #9ffffd;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
 }
 
 .cta-button:hover{
-    background: #FFF;
-    color: #005193;
+	background: #9ffffd;
+    border-color:  #9ffffd;
+    text-shadow: none;
 }
 
     .clientes__carousel .owl-controls {
@@ -20730,5 +20773,13 @@ Responsive - PC
         -moz-transform: translateZ(0);
         transform: translateZ(0);
         opacity: 1
+    }
+}
+
+@media screen and (min-width: 1023px){
+    .criacao__fase figure.criacao__img img.imgBlock{
+        width: auto;
+        height: 100%;
+        object-fit: cover;
     }
 }

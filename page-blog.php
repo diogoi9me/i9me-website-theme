@@ -104,7 +104,7 @@ if ( has_post_thumbnail() ) {
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="3" class=""><?php echo get_the_content(); ?></td>
+								<td colspan="3" class="blog__conteudo"><?php echo the_content(); ?></td>
 							</tr>
 						</tbody>
 			        </table>
